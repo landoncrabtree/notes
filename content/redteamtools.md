@@ -118,6 +118,7 @@ Repository | Description
 
 ### C2 Frameworks
 C2 frameworks can be considered both initial access and post-exploitation, as they generate payloads to be used in phishing campaigns (initial access) and will provide access to the host machine when ran (post exploitation).
+
 Repository | Description
 ---- | ----
 [Cobalt Strike](https://www.cobaltstrike.com/) | Most robust and advanced C2 framework (also paid).
