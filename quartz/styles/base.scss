@@ -345,6 +345,7 @@ figure[data-rehype-pretty-code-figure] {
   position: relative;
   line-height: 1.6rem;
   position: relative;
+  background-color: var(--lightgray);
 
   & > [data-rehype-pretty-code-title] {
     font-family: var(--codeFont);
@@ -369,6 +370,7 @@ pre {
   overflow-x: auto;
   border: 1px solid var(--lightgray);
   position: relative;
+  background-color: var(--lightgray);
 
   &:has(> code.mermaid) {
     border: none;
@@ -383,6 +385,7 @@ pre {
     display: grid;
     padding: 0.5rem 0;
     overflow-x: scroll;
+    background-color: var(--lightgray);
 
     & [data-highlighted-chars] {
       background-color: var(--highlight);
