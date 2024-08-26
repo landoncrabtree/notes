@@ -41,15 +41,10 @@ Writeups for HTB/THM rooms.
 - 2023 [[dogcat|DogCat]]
 - 2023 [[bountyhacker|Bounty Hacker]]
 
-# Notes
+# Red Team Notes
 General notes for whatever I don't want to forget.
+* Index
 - OSCP Prep (Coming Soon)
-- Windows
-	- Credentials
-		- [[dumpingwindowscredentials|Dumping Windows Credentials]]
-		- [[crackingdumpedwindowshashes|Cracking Dumped Windows Hashes]]
-		- [[passthehashattack|Pass-the-Hash Attack]]
-- Linux
 
 # Useful Tools
 Quick links and descriptions of tools used in different areas of cybersecurity. Great for a quick CTRL+F to find what you're looking for (hopefully).
