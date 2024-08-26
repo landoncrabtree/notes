@@ -12,7 +12,6 @@ This serves as a public repository of any notes I take. It serves the primary pu
 
 # CTF Writeups
 For assets related to CTF events, visit https://github.com/landoncrabtree/capture-the-flag
-
 For scripts and tools to assist in CTFs, check out https://github.com/landoncrabtree/ctf-toolbox
 
 I tried to do writeups for every challenge I solved, but that quickly began to be too burdensome. I now mostly writeup fun/unique solves. 
@@ -41,13 +40,11 @@ Writeups for HTB/THM rooms.
 - 2023 [[dogcat|DogCat]]
 - 2023 [[bountyhacker|Bounty Hacker]]
 
-# Red Team Notes
+# [[Red Team Notes]]
 General notes for whatever I don't want to forget.
-* Index
-- OSCP Prep (Coming Soon)
 
 # Useful Tools
 Quick links and descriptions of tools used in different areas of cybersecurity. Great for a quick CTRL+F to find what you're looking for (hopefully).
-- [[redteamtools|Red Team Tools]]
-- [[blueteamtools|Blue Team Tools]]
-- [[ctftools|CTF Tools]]
+- [[Red Team Tools]]
+- [[Blue Team Tools]]
+- [[CTF Tools]]
