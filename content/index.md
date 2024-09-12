@@ -31,11 +31,13 @@ I tried to do writeups for every challenge I solved, but that quickly began to b
 - 2024 [[uiuctf2024|UIUCTF]] | 75/959
 - 2024 SIV U.S. Cyber Open
 - 2024 [[ductf2024|DownUnderCTF]]
+- 2024 CSAW Qualifiers
+- 2024 InfoSec Conference Nashville, TN | 1st Place
 
 # HackTheBox/TryHackMe Writeups
 Writeups for HTB/THM rooms.
 - 2022 [[lazyadmin|Lazy Admin]]
-- 2022  [[paper|Paper]]
+- 2022 [[paper|Paper]]
 - 2022 [[archetype|Archetype]]
 - 2023 [[dogcat|DogCat]]
 - 2023 [[bountyhacker|Bounty Hacker]]
