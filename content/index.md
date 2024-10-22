@@ -16,24 +16,26 @@ For scripts and tools to assist in CTFs, check out https://github.com/landoncrab
 
 I tried to do writeups for every challenge I solved, but that quickly began to be too burdensome. I now mostly writeup fun/unique solves. 
 
-- 2021 MetaCTF 
-- 2021 [[nsacbc2021|NSA Codebreaker Challenge]]
-- 2022 HTB Dirty Money
-- 2022 MagpieCTF
-- 2023 SIII U.S. Cyber Open | 45/734
-- 2023 [[googlectf2023|Google CTF]]
-- 2023 UIUCTF
-- 2023 PatriotCTF | 9/697
-- 2023 [[csaw2023|CSAW Qualifiers]] | 167/1098
-- 2023 InfoSec Conference Nashville, TN | 1st Place
-- 2023 National Cyber League (Fall) | 23/7500
-- 2024 National Cyber League (Spring) | 44/7412
-- 2024 [[uiuctf2024|UIUCTF]] | 75/959
-- 2024 SIV U.S. Cyber Open
-- 2024 [[ductf2024|DownUnderCTF]]
-- 2024 CSAW Qualifiers
-- 2024 InfoSec Conference Nashville, TN | 1st Place
-
+| Date | Competition                               | Ranking   |
+| ---- | ----------------------------------------- | --------- |
+| 2021 | MetaCTF                                   |           |
+| 2021 | [[nsacbc2021\|NSA Codebreaker Challenge]] |           |
+| 2022 | HTB Dirty Money                           |           |
+| 2022 | MagpieCTF                                 |           |
+| 2023 | SIII U.S. Cyber Open                      | 35/734    |
+| 2023 | [[googlectf2023\|Google CTF]]             |           |
+| 2023 | UIUCTF                                    |           |
+| 2023 | PatriotCTF                                | 9/967     |
+| 2023 | [[csaw2023\|CSAW Qualifiers]]             | 167/1098  |
+| 2023 | InfoSec Conference (Nashville, TN)        | 1st Place |
+| 2023 | National Cyber League (Fall)              | 23/7500   |
+| 2024 | National Cyber League (Spring)            | 44/7412   |
+| 2024 | [[uiuctf2024\|UIUCTF]]                    | 75/959    |
+| 2024 | [[ductf2024\|DownUnderCTF]]               |           |
+| 2024 | [[csaw2024\|CSAW Qualifiers]]             |           |
+| 2024 | InfoSec Conference (Nashville, TN)        | 1st Place |
+| 2024 | NSA Codebreaker Challenge (In Progress)   |           |
+| 2024 | HuntressCTF (In Progress)                 |           |
 # HackTheBox/TryHackMe Writeups
 Writeups for HTB/THM rooms.
 - 2022 [[lazyadmin|Lazy Admin]]
