@@ -35,7 +35,7 @@ I tried to do writeups for every challenge I solved, but that quickly began to b
 | 2024 | [[csaw2024\|CSAW Qualifiers]]             |           |
 | 2024 | InfoSec Conference (Nashville, TN)        | 1st Place |
 | 2024 | NSA Codebreaker Challenge (In Progress)   |           |
-| 2024 | HuntressCTF (In Progress)                 |           |
+| 2024 | [[huntressctf2024\|HuntressCTF]]          | 63/3469   |
 # HackTheBox/TryHackMe Writeups
 Writeups for HTB/THM rooms.
 - 2022 [[lazyadmin|Lazy Admin]]
