@@ -35,28 +35,25 @@ Repository | Description
 [SpiderFoot](https://spiderfoot.net) | Automatic OSINT analysis.
 [TheHarvester](https://github.com/laramies/theHarvester) | Collects names, emails, IPs, and subdomains of a target.
 ### Reconnaissance
-Repository | Description
----- | ----
-[altdns](https://github.com/infosec-au/altdns) | Subdomain enumeration using mutated wordlists.
-[AWSBucketDump](https://github.com/jordanpotti/AWSBucketDump) | Enumerate AWS S3 buckets to find interesting files.
-[burpsuite](https://portswigger.net/burp) | An advanced web application testing suite that can be used to get info on how webpages work.
-[CameRadar](https://github.com/Ullaakut/cameradar) |  Cameradar hacks its way into RTSP videosurveillance cameraa
-[CloudBrute](https://github.com/0xsha/CloudBrute) | Enumerates "the cloud" (Google, AWS, DigitalOcean, etc) to find infrastructure, files, and apps for a given target.
-[dirb](https://github.com/v0re/dirb) | Web application directory / file fuzzer to find other pages.
-[DNSDumpster](https://dnsdumpster.com/) | Online tool for DNS information of a domain.
-[EyeWitness](https://github.com/FortyNorthSecurity/EyeWitness) | Screenshots webpages. Supports multi-domain lists and Nmap output.
-[feroxbuster](https://github.com/epi052/feroxbuster) | Like dirb, but written in Rust.
-[gobuster](https://github.com/OJ/gobuster) | Like dirb, but written in Go. Also supports DNS busting (such as subdomains).
-[GoWitness](https://github.com/sensepost/gowitness) | Like EyeWitness, but in Go.
-[Masscan](https://github.com/robertdavidgraham/masscan) | Like nmap, but faster (thus, not stealthy.)
-[Nikto](https://github.com/sullo/nikto) | Web server scanner to perform security checks on a web server.
-[Nmap](https://nmap.org/) | Find running services on a network.
-[Raccoon](https://github.com/evyatarmeged/Raccoon) | All-in-one Reconaissance. Port/service scans, dirbusting, and web application retrieval.
-[Recon-NG](https://github.com/lanmaster53/recon-ng) | Reconaissance and OSINT framework. Has many modules such as port scanning, subdomain finding, Shodan, etc.
-[Rustscan](https://github.com/RustScan/RustScan) | A rust network scanner that is faster than Nmap, and sends open ports to Nmap for service/version detection.
-[subfinder](https://github.com/projectdiscovery/subfinder) | Passive subdomain discovery tool.
-[wappalyzer](https://www.wappalyzer.com/) | Identify what frameworks a website runs
-[wpscan](https://github.com/wpscanteam/wpscan) | Automatic WordPress scanner to identify information about a WordPress site and possible vulnerabilities.
+| Repository                                                    | Description                                                                                                         |
+| ------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| [altdns](https://github.com/infosec-au/altdns)                | Subdomain enumeration using mutated wordlists.                                                                      |
+| [AWSBucketDump](https://github.com/jordanpotti/AWSBucketDump) | Enumerate AWS S3 buckets to find interesting files.                                                                 |
+| [CameRadar](https://github.com/Ullaakut/cameradar)            | Cameradar hacks its way into RTSP videosurveillance cameraa                                                         |
+| [CloudBrute](https://github.com/0xsha/CloudBrute)             | Enumerates "the cloud" (Google, AWS, DigitalOcean, etc) to find infrastructure, files, and apps for a given target. |
+| [dirb](https://github.com/v0re/dirb)                          | Web application directory / file fuzzer to find other pages.                                                        |
+| [DNSDumpster](https://dnsdumpster.com/)                       | Online tool for DNS information of a domain.                                                                        |
+| [feroxbuster](https://github.com/epi052/feroxbuster)          | Web application directory / file fuzzer to find other pages.                                                        |
+| [gobuster](https://github.com/OJ/gobuster)                    | Web application directory / file fuzzer to find other pages, and support for DNS and vhost fuzzing.                 |
+| [GoWitness](https://github.com/sensepost/gowitness)           | Screenshots webpages. Supports multi-domain lists and Nmap output.                                                  |
+| [Masscan](https://github.com/robertdavidgraham/masscan)       | Like nmap, but faster (thus, not stealthy.)                                                                         |
+| [Nikto](https://github.com/sullo/nikto)                       | Web server scanner to perform security checks on a web server.                                                      |
+| [Nmap](https://nmap.org/)                                     | Finds open ports on a network. Additionally can detect version, OS, and more.                                       |
+| [Raccoon](https://github.com/evyatarmeged/Raccoon)            | All-in-one reconaissance. port/service scans, dirbusting, and web application retrieval.                            |
+| [Recon-NG](https://github.com/lanmaster53/recon-ng)           | Reconaissance and OSINT framework. Has many modules such as port scanning, subdomain finding, Shodan, etc.          |
+| [subfinder](https://github.com/projectdiscovery/subfinder)    | Passive subdomain discovery tool.                                                                                   |
+| [wappalyzer](https://www.wappalyzer.com/)                     | Identify what frameworks a website runs                                                                             |
+| [wpscan](https://github.com/wpscanteam/wpscan)                | Automatic WordPress scanner to identify information about a WordPress site and possible vulnerabilities.            |
 ### Social Engineering
 | Repository                                                                          | Description                                                                                                                                                      |
 | ----------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -123,30 +120,44 @@ Repository | Description
 [Sliver](https://github.com/BishopFox/sliver) | Go C2 framework.
 [Villain](https://github.com/t3l3machus/Villain) | Python and Powershell C2 framework.
 ### Post Exploitation
-| Repository                                                                                | Description                                                                                                                        |
-| ----------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| [BeRoot](https://github.com/AlessandroZ/BeRoot)                                           | Automated Windows, Linux, and Mac privilege escalation path discovery tool.                                                        |
-| [BloodHound](https://github.com/BloodHoundAD/BloodHound)                                  | Active Directory visualizer, useful for finding misconfigurations and/or shortest path to Domain Admin.                            |
-| [BloodHound.py](https://github.com/dirkjanm/BloodHound.py)                                | Remote Python data ingestor for BloodHound.                                                                                        |
-| [GTFOBins](https://gtfobins.github.io/)                                                   | Unix binaries that can be used to bypass local security restrictions in misconfigured systems.                                     |
-| [Impacket](https://github.com/SecureAuthCorp/impacket)                                    | A collection of Python scripts useful for Windows targets: psexec, smbexec, kerberoasting, ticket attacks, etc.                    |
-| [Invoke-PrivescCheck](https://github.com/itm4n/PrivescCheck)                              | Automated Windows privilege escalation path discovery tool.                                                                        |
-| [LOLBAS](https://github.com/LOLBAS-Project/LOLBAS)                                        | Microsoft-signed binaries to perform APT or red-team functions (ie: dumping process memory).                                       |
-| [Mimikatz](https://github.com/ParrotSec/mimikatz)                                         | Mimikatz is both an exploit on Microsoft Windows that extracts passwords stored in memory and software that performs that exploit. |
-| [nishang](https://github.com/samratashok/nishang)                                         | Offensive PowerShell for red team, penetration testing and offensive security.                                                     |
-| [PEASS-ng](https://github.com/carlospolop/PEASS-ng)                                       | Automated Windows, Linux, and Mac privilege escalation path discovery tool.                                                        |
-| [PowerHub](https://github.com/AdrianVollmer/PowerHub)                                     | Post-exploitation module for bypassing endpoint protection and running arbitrary files.                                            |
-| [PowerSploit](https://github.com/AdrianVollmer/PowerSploit)                               | A PowerShell post-exploitation framework with many modules: exfiltration, privelege escalation, etc.                               |
-| [PowerUp](https://github.com/PowerShellMafia/PowerSploit/blob/master/Privesc/PowerUp.ps1) | Automated Windows privilege escalation path discovery tool.                                                                        |
-| [SharpHound](https://github.com/BloodHoundAD/SharpHound)                                  | C# data ingestor for BloodHound.                                                                                                   |
-| [smbclient](https://www.samba.org/samba/docs/current/man-html/smbclient.1.html)           | Connect to SMB shares.                                                                                                             |
-| [smbmap](https://github.com/ShawnDEvans/smbmap)                                           | Enumerates SMB shares.                                                                                                             |
+
+> Modules for lateral movement, exfiltration, system enumeration, and more.
+
+| Repository                                                  | Description                                                                                                                                                                           |
+| ----------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [BloodHound](https://github.com/BloodHoundAD/BloodHound)    | Active Directory visualizer, useful for finding misconfigurations and/or shortest path to Domain Admin.                                                                               |
+| [BloodHound.py](https://github.com/dirkjanm/BloodHound.py)  | Remote Python data ingestor for BloodHound.                                                                                                                                           |
+| [Impacket](https://github.com/SecureAuthCorp/impacket)      | A collection of Python scripts useful for Windows targets: psexec, smbexec, kerberoasting, ticket attacks, etc.                                                                       |
+| [Mimikatz](https://github.com/ParrotSec/mimikatz)           | Mimikatz is both an exploit on Microsoft Windows that extracts passwords stored in memory and software that performs that exploit.                                                    |
+| [nishang](https://github.com/samratashok/nishang)           | Offensive PowerShell for red team, penetration testing and offensive security.                                                                                                        |
+| [PowerHub](https://github.com/AdrianVollmer/PowerHub)       | Post-exploitation module for bypassing endpoint protection and running arbitrary files.                                                                                               |
+| [PowerSploit](https://github.com/AdrianVollmer/PowerSploit) | A PowerShell post-exploitation framework with many modules: exfiltration, privelege escalation, etc.                                                                                  |
+| [SharpHound](https://github.com/BloodHoundAD/SharpHound)    | C# data ingestor for BloodHound. (Recommend [SharpHound.ps1](https://raw.githubusercontent.com/BloodHoundAD/BloodHound/master/Collectors/SharpHound.ps1) for Bloodhound Kali version) |
+
+### Privilege Escalation
+
+> These tools automatically enumerate current user privileges and try to find misconfigurations that would allow escalation to `root` and/or `NT AUTHORITY\SYSTEM`. 
+
+| Repository                                                                                | Description                                                                                    |
+| ----------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| [BeRoot](https://github.com/AlessandroZ/BeRoot)                                           | Automated Windows, Linux, and Mac privilege escalation path discovery tool.                    |
+| [GTFOBins](https://gtfobins.github.io/)                                                   | Unix binaries that can be used to bypass local security restrictions in misconfigured systems. |
+| [Invoke-PrivescCheck](https://github.com/itm4n/PrivescCheck)                              | Automated Windows privilege escalation path discovery tool.                                    |
+| [PEASS-ng](https://github.com/carlospolop/PEASS-ng)                                       | Automated Windows, Linux, and Mac privilege escalation path discovery tool.                    |
+| [PowerUp](https://github.com/PowerShellMafia/PowerSploit/blob/master/Privesc/PowerUp.ps1) | Automated Windows privilege escalation path discovery tool.                                    |
+
 ### Exfiltration
-Repository | Description
----- | ----
-[DNSExfiltrator](https://github.com/Arno0x/DNSExfiltrator) | Data exfiltration over DNS request covert channel
-[PowerSploit](https://github.com/AdrianVollmer/PowerSploit) | A PowerShell post-exploitation framework with many modules: exfiltration, privelege escalation, etc.
+
+> Data exfiltration
+
+| Repository                                                  | Description                                                                                          |
+| ----------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| [DNSExfiltrator](https://github.com/Arno0x/DNSExfiltrator)  | Data exfiltration over DNS request covert channel                                                    |
+
 ### Credential Dumping
+
+> These tools help dump cached credentials from a system. 
+
 | Repository                                             | Description                                                                  |
 | ------------------------------------------------------ | ---------------------------------------------------------------------------- |
 | [certsync](https://github.com/zblurx/certsync)         | Dump NTDS with golden certificates and UnPAC the hash                        |
@@ -155,6 +166,9 @@ Repository | Description
 | [Mimikatz](https://github.com/ParrotSec/mimikatz)      | Dump local and domain credentials with sekurlsa, lsadump modules.            |
 
 ### Password Cracking
+
+> These tools assist in uncovering passwords, whether it be for a hash or for password spraying attempts.
+
 | Repository                                         | Description                                                                                       |
 | -------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
 | [CeWL](https://github.com/digininja/CeWL)          | Scrape websites to generate wordlists.                                                            |
@@ -163,3 +177,14 @@ Repository | Description
 | [hashcat](https://hashcat.net/hashcat)             | Password cracking tool.                                                                           |
 | [JohnTheRipper](https://www.openwall.com/john/)    | Password cracking tool.                                                                           |
 | [Mentalist](https://github.com/sc0tfree/mentalist) | A GUI for wordlist generation based on rules such as appending, prepending, etc.                  |
+
+### AI / LLM
+
+> This section will probably be outdated quick. 
+
+| Repository                                                        | Description                                                                                                                     |
+| ----------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| [HarmBench](https://www.harmbench.org/)                           | A standardized evaluation framework for automated red teaming and robust refusal.                                               |
+| [Adversarial Suffix](https://llm-attacks.org/index.html#examples) | Jailbreak based on prepending a potentially malicious query.                                                                    |
+| [AutoDAN-Turbo](https://autodans.github.io/AutoDAN-Turbo/)        | Black-box jailbreak method that can automatically discover as many jailbreak strategies as possible from scratch.               |
+| [Best-of-N](https://jplhughes.github.io/bon-jailbreaking/)        | Black-box algorithm that jailbreaks frontier AI systems across modalities (text, image, vision) by mutating the original query. |
