@@ -6,6 +6,7 @@ tags:
   - tooling
 ---
 ### Forensics
+
 | Repository                                                                    | Description                                                                                                             |
 | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
 | [Angle-Grinder](https://github.com/rcoh/angle-grinder)                        | Parse, aggregate, sum, average, min/max, percentile, and sort log files.                                                |
@@ -24,6 +25,7 @@ tags:
 | --------------------------------------- | -------------------------------------------------------------- |
 | [mitmproxy](https://mitmproxy.org/)     | CLI-based HTTP(S) proxy to intercept and modify HTTP requests. |
 | [Wireshark](https://www.wireshark.org/) | GUI-based pcap, pcapng analyzer and network traffic sniffer.   |
+
 ### Deobfuscation & Unpacking
 
 | Repository                                                                                      | Description                                            |
@@ -38,7 +40,9 @@ tags:
 | [PSDecode](https://github.com/R3MRUM/PSDecode)                                                  | PowerShell deobfuscator.                               |
 | [relative.im](https://deobfuscate.relative.im/)                                                 | Javascript deobfuscator.                               |
 | [UnconfuserExTools](https://github.com/landoncrabtree/UnconfuserExTools)                        | ConfuserEx deobfuscation toolkit (old).                |
+
 ### Reverse Engineering
+
 | Repository                                                                            | Description                                                |
 | ------------------------------------------------------------------------------------- | ---------------------------------------------------------- |
 | [awesome-ida-x64-olly-plugin](https://github.com/fr0gger/awesome-ida-x64-olly-plugin) | A list of plugins for IDA, Ghidra, GDB, OllyDBG, etc.      |
@@ -59,7 +63,9 @@ tags:
 | [rizin](https://github.com/rizinorg/rizin)                                            | Disassembler and debugger CLI.                             |
 | [x64dbg](https://x64dbg.com/)                                                         | GUI debugger for Windows executables.                      |
 | [XPEViewer](https://github.com/horsicq/XPEViewer)                                     | PE file viewer (headers, libraries, strings, etc).         |
+
 ### Malware Analysis
+
 | Repository                                                                                    | Description                                                                                       |
 | --------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
 | [any.run](https://any.run)                                                                    | Cloud-based sandbox.                                                                              |
@@ -77,10 +83,11 @@ tags:
 | [Process Monitor](https://learn.microsoft.com/en-us/sysinternals/downloads/procmon)           | Tracks registry, file system, network, and process activity.                                      |
 
 ### Hardening
+
 Repository | Description
 ---- | ----
-[BLUESPAWN](https://github.com/ION28/BLUESPAWN) |  An Active Defense and EDR software to empower Blue Teams 
+[BLUESPAWN](https://github.com/ION28/BLUESPAWN) |  An Active Defense and EDR software to empower Blue Teams
 [CISBenchmarks](https://downloads.cisecurity.org) | Benchmark for security configuration best practices
-[HardeningKitty](https://github.com/0x6d69636b/windows_hardening) | HardeningKitty and Windows Hardening settings and configurations 
+[HardeningKitty](https://github.com/0x6d69636b/windows_hardening) | HardeningKitty and Windows Hardening settings and configurations
 [Linux Hardening](https://madaidans-insecurities.github.io/guides/linux-hardening.html) | Linux Hardening
-[SteamRoller](https://github.com/Msfv3n0m/SteamRoller) | Automating basic security configurations across an Active Directory environment 
+[SteamRoller](https://github.com/Msfv3n0m/SteamRoller) | Automating basic security configurations across an Active Directory environment

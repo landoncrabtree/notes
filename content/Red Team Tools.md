@@ -6,6 +6,7 @@ tags:
   - tooling
 ---
 ### Defense Evasion
+
 | Repository                                                                         | Description                                                        |
 | ---------------------------------------------------------------------------------- | ------------------------------------------------------------------ |
 | [Amsi-Bypass-PowerShell](https://github.com/S3cur3Th1sSh1t/Amsi-Bypass-Powershell) | AMSI bypasses (most are patched, but can be obfuscated to bypass). |
@@ -17,10 +18,12 @@ tags:
 | [Invoke-Stealth](https://github.com/JoelGMSec/Invoke-Stealth)                      | PowerShell script obfuscator.                                      |
 | [UPX](https://upx.github.io/)                                                      | PE packer.                                                         |
 | [Unprotect](https://unprotect.it)                                                  | Contains malware evasion techniques along with PoC.                |
+
 ### OSINT
+
 Repository | Description
 ---- | ----
-[Cloudmare](https://github.com/mrh0wl/Cloudmare) |  Cloudflare, Sucuri, Incapsula real IP tracker. 
+[Cloudmare](https://github.com/mrh0wl/Cloudmare) |  Cloudflare, Sucuri, Incapsula real IP tracker.
 [crt.sh](https://crt.sh) | Find certificates based on a domain name. Can be used to find subdomains.
 [DorkSearch](https://dorksearch.com/) | Premade Google dork queries.
 [ExifTool](https://exiftool.org) | Read (and modify) metadata of files.
@@ -34,7 +37,9 @@ Repository | Description
 [Shodan](https://shodan.io) | Scans for all digital assets.
 [SpiderFoot](https://spiderfoot.net) | Automatic OSINT analysis.
 [TheHarvester](https://github.com/laramies/theHarvester) | Collects names, emails, IPs, and subdomains of a target.
-### Reconnaissance
+
+### Reconaissance
+
 | Repository                                                    | Description                                                                                                         |
 | ------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
 | [altdns](https://github.com/infosec-au/altdns)                | Subdomain enumeration using mutated wordlists.                                                                      |
@@ -54,7 +59,9 @@ Repository | Description
 | [subfinder](https://github.com/projectdiscovery/subfinder)    | Passive subdomain discovery tool.                                                                                   |
 | [wappalyzer](https://www.wappalyzer.com/)                     | Identify what frameworks a website runs                                                                             |
 | [wpscan](https://github.com/wpscanteam/wpscan)                | Automatic WordPress scanner to identify information about a WordPress site and possible vulnerabilities.            |
+
 ### Social Engineering
+
 | Repository                                                                          | Description                                                                                                                                                      |
 | ----------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [evilginx](https://github.com/kgretzky/evilginx2)                                   | Standalone man-in-the-middle attack framework used for phishing login credentials along with session cookies, allowing for the bypass of 2-factor authentication |
@@ -64,12 +71,15 @@ Repository | Description
 | [SpoofCheck](https://github.com/BishopFox/spoofcheck)                               | Checks if a domain can be spoofed.                                                                                                                               |
 | [zphisher](https://github.com/htr-tech/zphisher)                                    | Phishing campaign framework to compromise user credentials.                                                                                                      |
 ### Leaked Credentials
+
 | Repository                         | Description                      |
 | ---------------------------------- | -------------------------------- |
 | [Dehashed](https://dehashed.com)   | Leaked credential search engine. |
 | [LeakCheck](https://leakcheck.com) | Leaked credential search engine. |
 | [Snusbase](https://snusbase.com)   | Leaked credential search engine. |
+
 ### Web Exploitation
+
 | Repository                                                                              | Description                                                                                              |
 | --------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
 | [Arachni](https://github.com/Arachni/arachni)                                           | Web Application Security Scanner Framework                                                               |
@@ -87,15 +97,19 @@ Repository | Description
 | [w3af](https://w3af.org/)                                                               | Web application attack and audit framework.                                                              |
 | [wappalyzer](https://www.wappalyzer.com/)                                               | Identify what frameworks a website runs.                                                                 |
 | [wpscan](https://github.com/wpscanteam/wpscan)                                          | Automatic WordPress scanner to identify information about a WordPress site and possible vulnerabilities. |
+
 ### Wireless
+
 Repository | Description
 ---- | ----
 [Aircrack-ng](https://www.aircrack-ng.org) | Aircrack-ng is a complete suite of tools to assess WiFi network security.
 [Kismet](https://www.kismetwireless.net/) | sniffer, WIDS, and wardriving tool for Wi-Fi, Bluetooth, Zigbee, RF, and more
 [Reaver](https://github.com/t6x/reaver-wps-fork-t6x) | Reaver implements a brute force attack against Wifi Protected Setup (WPS) registrar PINs in order to recover WPA/WPA2 passphrases
 [Wifite](https://www.kali.org/tools/wifite/) | Python script to automate wireless auditing using aircrack-ng tools
-[WifiPhisher](https://github.com/wifiphisher/wifiphisher) |  The Rogue Access Point Framework 
+[WifiPhisher](https://github.com/wifiphisher/wifiphisher) |  The Rogue Access Point Framework
+
 ### Initial Access
+
 | Repository                                                         | Description                                                                                                                                      |
 | ------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | [Easysploit](https://github.com/KALILINUXTRICKSYT/easysploit)      | Automatic Metasploit payload generator and shell listener.                                                                                       |
@@ -119,6 +133,7 @@ Repository | Description
 [Pupy](https://github.com/n1nj4sec/pupy) | Python and C C2 framework.
 [Sliver](https://github.com/BishopFox/sliver) | Go C2 framework.
 [Villain](https://github.com/t3l3machus/Villain) | Python and Powershell C2 framework.
+
 ### Post Exploitation
 
 > Modules for lateral movement, exfiltration, system enumeration, and more.
@@ -136,7 +151,7 @@ Repository | Description
 
 ### Privilege Escalation
 
-> These tools automatically enumerate current user privileges and try to find misconfigurations that would allow escalation to `root` and/or `NT AUTHORITY\SYSTEM`. 
+> These tools automatically enumerate current user privileges and try to find misconfigurations that would allow escalation to `root` and/or `NT AUTHORITY\SYSTEM`.
 
 | Repository                                                                                | Description                                                                                    |
 | ----------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
@@ -156,7 +171,7 @@ Repository | Description
 
 ### Credential Dumping
 
-> These tools help dump cached credentials from a system. 
+> These tools help dump cached credentials from a system.
 
 | Repository                                             | Description                                                                  |
 | ------------------------------------------------------ | ---------------------------------------------------------------------------- |
@@ -180,7 +195,7 @@ Repository | Description
 
 ### AI / LLM
 
-> This section will probably be outdated quick. 
+> This section will probably be outdated quick.
 
 | Repository                                                        | Description                                                                                                                     |
 | ----------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |

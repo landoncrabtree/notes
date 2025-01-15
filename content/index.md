@@ -11,6 +11,7 @@ This serves as a public repository of any notes I take. It serves the primary pu
 * Acting as a public knowledge base for others interested in learning
 
 # CTF Writeups
+
 For assets related to CTF events, visit https://github.com/landoncrabtree/capture-the-flag
 For scripts and tools to assist in CTFs, check out https://github.com/landoncrabtree/ctf-toolbox
 
@@ -36,8 +37,11 @@ I tried to do writeups for every challenge I solved, but that quickly began to b
 | 2024 | InfoSec Conference (Nashville, TN)        | 1st Place |
 | 2024 | NSA Codebreaker Challenge (In Progress)   |           |
 | 2024 | [[huntressctf2024\|HuntressCTF]]          | 63/3469   |
+| 2024 | [[adventofctf2024\|Advent of CTF 2024]]   | 33/399    |
 # HackTheBox/TryHackMe Writeups
+
 Writeups for HTB/THM rooms.
+
 - 2022 [[lazyadmin|Lazy Admin]]
 - 2022 [[paper|Paper]]
 - 2022 [[archetype|Archetype]]
@@ -45,10 +49,12 @@ Writeups for HTB/THM rooms.
 - 2023 [[bountyhacker|Bounty Hacker]]
 
 # [[Red Team Notes]]
+
 General notes for whatever I don't want to forget.
 
 # Useful Tools
 Quick links and descriptions of tools used in different areas of cybersecurity. Great for a quick CTRL+F to find what you're looking for (hopefully).
+
 - [[Red Team Tools]]
 - [[Blue Team Tools]]
 - [[CTF Tools]]
