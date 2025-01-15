@@ -162,72 +162,49 @@ curl https://apple-fanatic.csd.lol/my-secret-vault-of-scripts-n-files/the-birth-
 
 `csd{5H3_w45_80RN_0N_7H3_d4y_0f_Chr157M4Z}`
 
-# Day 15: JETS
+# Day 9: resa?
 
-> It seems like the Secret Society of K.U.N.A.L has invested in another business…Oh no.
-> 
-> If those planes come anywhere close to Santa—after his “adventure” in France—he’ll be scathed for good. Those reindeer don’t like inhaling kerosene!
-> 
-> Agent, we need you to infiltrate their system and gather some information for our engineers at Elves Intelligence. We believe the plane they’re using is a bit special…it may have been custom-built for K.U.N.A.L himself!
-> 
-> Here’s their website, agent: [https://jets.csd.lol/](https://jets.csd.lol/). Best of luck.
+> Elf Theodred: Hey, I’m testing out a new... 
+> You: What? You lost me at "Hey, I’m testing."
+> Elf Theodred: What I said was, I encrypted... and missing q.
+> You: Resa? Vesa? Are we talking about monitors or cybersecurity? And what’s this about a missing e and q? Is that supposed to be a type of screw? Huh?
+> Elf Theodred: I’m not repeating myself to an intern. Figure it out, bud. And if you heard a word I said, it's under 50.
 
 
-The website offers simple functionality. There is a "Sign Up" button where you enter a username and password, and that then makes a `POST` request to `/signup` and sets a cookie, using JWT. If we take a look at DevTools, and specifically the Debugger tab, we see a custom `script.js` with some interesting functionality:
+We are given three values: `n`, `p`, and `c`. This is a simple RSA problem. 
+* `n`: Public key modulus: the result of `p*q`. 
+* `p`: A large prime number.
+* `c`: The encrypted ciphertext.
 
-```js
-import { jwtDecode } from "https://cdn.jsdelivr.net/npm/jwt-decode@4.0.0/+esm";
+To decrypt RSA, we need the private key, `d`, which relies on knowing `p`, `q`, and `e`. So, we're missing two values. Luckily, we have `n` and `p`, which means we can compute `q` by doing `q = n // p`. Then, we just need to figure out `e`, which is (usually) 65537, but in this case, they mention "under 50", so we can bruteforce it. 
 
-function getCookie(name) {
-  const value = `; ${document.cookie}`;
-  const parts = value.split(`; ${name}=`);
-  if (parts.length === 2) return parts.pop().split(";").shift();
-}
+```python
+import math
+from Crypto.Util.number import long_to_bytes
 
-const signupButton = document.getElementById("signup");
-const form = document.getElementById("form");
-const footer = document.getElementById("footer");
-const userText = document.getElementById("user-text");
-const planes = document.getElementById("planes");
+n = 14796477939003611775208041290348339020936676002454717224646251311708293201469184897483873509941865693809473126459329421641681364023167948749968330703736720102973359063469333188059740821023029754734348790951000190344725434181826714146206341535759458897968330526467533482043059528899390103382667493810391462225262830839080650123020531330437922519352683752900562956790917167821286707566070945501977829889638290916396721583750493508694371199246172248676755456956867908139894047255712093824958695471469193986023590431653571458714419577768587744910333974014399293363573408883808909700956297360313208260851637982241566005049
+p = 95035264145462998106373959950852388512916398417336694051973007035267892127571038290551358518210018988802168144062568058000141570285306734135476955708641860308084865175837570650537276267265396611644179740194499506782555051319215145789689879081854479885459274078337276115880870922739027746148771680782305865397
+c = 7834381455537086069556470828674580173937271064256312815617230923582264273260067511896680320170885743343862894164014864043792487985706669274975353978277862462944814782646749746217479200710773218743409525658958249817055354592575831865920206596021699022326281524908299055420849742148757177093582285192053105592180465511200588277457610702671508363048935552446809692594715753573724603294565113603946429767347234628199252177612170759392617992009035004668823723769453952068616628571785811538463850603629779083508146990944772896050051747702814005551146368404685501836088557927084895438654990821206561992369510510301944786242
 
-const token = getCookie("token");
+# Calculate q
+q = n // p
 
-if (token) {
-  const { sub } = jwtDecode(token, {
-    secret: atob("MWRkMjJiYjQyNzBjYjE0NTcyMzIyZTAzNDI1YzAwNTgzZTAyYmY2M2Y1YzdhZjdkMmYzODdlMjRlN2Q1YjkzMQ=="),
-  });
-  console.log(sub);
+# Calculate phi
+phi = (p - 1) * (q - 1)
 
-  if (sub === atob("S1VuNEw=")) {
-    footer.style.display = "block";
-  }
-
-  signupButton.style.display = "none";
-  userText.style.display = "block";
-  userText.innerHTML = `G&apos;day, <strong>${sub}</strong>`;
-
-  const res = await fetch("/my-planes");
-  const json = await res.json();
-
-  planes.style.display = "grid";
-  console.log(json);
-
-  for (const [index, plane] of json.planes.entries()) {
-    const element = document.getElementById(index + 1);
-    element.style.display = "block";
-
-    const name = document.getElementById(`${index + 1}-text`);
-    name.innerText = plane.name;
-
-    const image = document.getElementById(`${index + 1}-image`);
-    image.src = plane.image;
-  }
-}
+# Bruteforce e
+for e in range(2, 50):
+    if math.gcd(e, phi) == 1:
+        print(f"e: {e}")
+        d = pow(e, -1, phi)
+        m = pow(c, d, n)
+        decrypted = long_to_bytes(m)
+        if "csd" in str(decrypted):
+            print(decrypted)
+            break
 ```
 
-It looks like there is some client-side conditional rendering based on the `sub` (username) of the JWT token. It gets the username and if it's `S1VuNEw=` (base64) or `KUn4L` (ASCII) then the footer is displayed (which just shows "VIP Treatment Center"). Then, the planes for that user are rendered. However, because the JWT decoding and validation is being done client-side, this reveals the JWT secret to us. This means we can forge a JWT token using the `MWRkMjJiYjQyNzBjYjE0NTcyMzIyZTAzNDI1YzAwNTgzZTAyYmY2M2Y1YzdhZjdkMmYzODdlMjRlN2Q1YjkzMQ==` secret and set `sub` to `KUn4L`. Using the [following CyberChef recipe](https://gchq.github.io/CyberChef/#recipe=JWT_Sign('1dd22bb4270cb14572322e03425c00583e02bf63f5c7af7d2f387e24e7d5b931','HS256')&input=ewoiaWF0IjogMTczNDU0NjgzMiwKImV4cCI6IDE3MzQ1NTA0MzIsCiJzdWIiOiAiS1VuNEwiCn0), we can generate a JWT token, set that as our `token` cookie, and refresh the page to get the flag!
-
-`csd{Wh47_D1D_KUN4l_do_7h1S_71M3}`
+`csd{V3sA_R3sa_RSa?_1D3k}`
 
 # Day 12: Letter to Santa
 
@@ -338,49 +315,72 @@ This first finds locations with `{charge: "3 EUR", tourism: "museum"}`. From the
 
 `csd{48.204,7.364}`
 
-# Day 9: resa?
+# Day 15: JETS
 
-> Elf Theodred: Hey, I’m testing out a new... 
-> You: What? You lost me at "Hey, I’m testing."
-> Elf Theodred: What I said was, I encrypted... and missing q.
-> You: Resa? Vesa? Are we talking about monitors or cybersecurity? And what’s this about a missing e and q? Is that supposed to be a type of screw? Huh?
-> Elf Theodred: I’m not repeating myself to an intern. Figure it out, bud. And if you heard a word I said, it's under 50.
+> It seems like the Secret Society of K.U.N.A.L has invested in another business…Oh no.
+> 
+> If those planes come anywhere close to Santa—after his “adventure” in France—he’ll be scathed for good. Those reindeer don’t like inhaling kerosene!
+> 
+> Agent, we need you to infiltrate their system and gather some information for our engineers at Elves Intelligence. We believe the plane they’re using is a bit special…it may have been custom-built for K.U.N.A.L himself!
+> 
+> Here’s their website, agent: [https://jets.csd.lol/](https://jets.csd.lol/). Best of luck.
 
 
-We are given three values: `n`, `p`, and `c`. This is a simple RSA problem. 
-* `n`: Public key modulus: the result of `p*q`. 
-* `p`: A large prime number.
-* `c`: The encrypted ciphertext.
+The website offers simple functionality. There is a "Sign Up" button where you enter a username and password, and that then makes a `POST` request to `/signup` and sets a cookie, using JWT. If we take a look at DevTools, and specifically the Debugger tab, we see a custom `script.js` with some interesting functionality:
 
-To decrypt RSA, we need the private key, `d`, which relies on knowing `p`, `q`, and `e`. So, we're missing two values. Luckily, we have `n` and `p`, which means we can compute `q` by doing `q = n // p`. Then, we just need to figure out `e`, which is (usually) 65537, but in this case, they mention "under 50", so we can bruteforce it. 
+```js
+import { jwtDecode } from "https://cdn.jsdelivr.net/npm/jwt-decode@4.0.0/+esm";
 
-```python
-import math
-from Crypto.Util.number import long_to_bytes
+function getCookie(name) {
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) return parts.pop().split(";").shift();
+}
 
-n = 14796477939003611775208041290348339020936676002454717224646251311708293201469184897483873509941865693809473126459329421641681364023167948749968330703736720102973359063469333188059740821023029754734348790951000190344725434181826714146206341535759458897968330526467533482043059528899390103382667493810391462225262830839080650123020531330437922519352683752900562956790917167821286707566070945501977829889638290916396721583750493508694371199246172248676755456956867908139894047255712093824958695471469193986023590431653571458714419577768587744910333974014399293363573408883808909700956297360313208260851637982241566005049
-p = 95035264145462998106373959950852388512916398417336694051973007035267892127571038290551358518210018988802168144062568058000141570285306734135476955708641860308084865175837570650537276267265396611644179740194499506782555051319215145789689879081854479885459274078337276115880870922739027746148771680782305865397
-c = 7834381455537086069556470828674580173937271064256312815617230923582264273260067511896680320170885743343862894164014864043792487985706669274975353978277862462944814782646749746217479200710773218743409525658958249817055354592575831865920206596021699022326281524908299055420849742148757177093582285192053105592180465511200588277457610702671508363048935552446809692594715753573724603294565113603946429767347234628199252177612170759392617992009035004668823723769453952068616628571785811538463850603629779083508146990944772896050051747702814005551146368404685501836088557927084895438654990821206561992369510510301944786242
+const signupButton = document.getElementById("signup");
+const form = document.getElementById("form");
+const footer = document.getElementById("footer");
+const userText = document.getElementById("user-text");
+const planes = document.getElementById("planes");
 
-# Calculate q
-q = n // p
+const token = getCookie("token");
 
-# Calculate phi
-phi = (p - 1) * (q - 1)
+if (token) {
+  const { sub } = jwtDecode(token, {
+    secret: atob("MWRkMjJiYjQyNzBjYjE0NTcyMzIyZTAzNDI1YzAwNTgzZTAyYmY2M2Y1YzdhZjdkMmYzODdlMjRlN2Q1YjkzMQ=="),
+  });
+  console.log(sub);
 
-# Bruteforce e
-for e in range(2, 50):
-    if math.gcd(e, phi) == 1:
-        print(f"e: {e}")
-        d = pow(e, -1, phi)
-        m = pow(c, d, n)
-        decrypted = long_to_bytes(m)
-        if "csd" in str(decrypted):
-            print(decrypted)
-            break
+  if (sub === atob("S1VuNEw=")) {
+    footer.style.display = "block";
+  }
+
+  signupButton.style.display = "none";
+  userText.style.display = "block";
+  userText.innerHTML = `G&apos;day, <strong>${sub}</strong>`;
+
+  const res = await fetch("/my-planes");
+  const json = await res.json();
+
+  planes.style.display = "grid";
+  console.log(json);
+
+  for (const [index, plane] of json.planes.entries()) {
+    const element = document.getElementById(index + 1);
+    element.style.display = "block";
+
+    const name = document.getElementById(`${index + 1}-text`);
+    name.innerText = plane.name;
+
+    const image = document.getElementById(`${index + 1}-image`);
+    image.src = plane.image;
+  }
+}
 ```
 
-`csd{V3sA_R3sa_RSa?_1D3k}`
+It looks like there is some client-side conditional rendering based on the `sub` (username) of the JWT token. It gets the username and if it's `S1VuNEw=` (base64) or `KUn4L` (ASCII) then the footer is displayed (which just shows "VIP Treatment Center"). Then, the planes for that user are rendered. However, because the JWT decoding and validation is being done client-side, this reveals the JWT secret to us. This means we can forge a JWT token using the `MWRkMjJiYjQyNzBjYjE0NTcyMzIyZTAzNDI1YzAwNTgzZTAyYmY2M2Y1YzdhZjdkMmYzODdlMjRlN2Q1YjkzMQ==` secret and set `sub` to `KUn4L`. Using the [following CyberChef recipe](https://gchq.github.io/CyberChef/#recipe=JWT_Sign('1dd22bb4270cb14572322e03425c00583e02bf63f5c7af7d2f387e24e7d5b931','HS256')&input=ewoiaWF0IjogMTczNDU0NjgzMiwKImV4cCI6IDE3MzQ1NTA0MzIsCiJzdWIiOiAiS1VuNEwiCn0), we can generate a JWT token, set that as our `token` cookie, and refresh the page to get the flag!
+
+`csd{Wh47_D1D_KUN4l_do_7h1S_71M3}`
 
 # Day 18: trng
 
