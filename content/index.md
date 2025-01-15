@@ -10,6 +10,8 @@ This serves as a public repository of any notes I take. It serves the primary pu
 * Acting as a personal knowledge base for my learning 
 * Acting as a public knowledge base for others interested in learning
 
+I utilize [Obsidian](https://obsidian.md) as my primary method of note-taking. Then, I utilize [Quartz](https://github.com/jackyzha0/quartz) as a frontend for the notes, allowing for the notes to be publicly hosted and available to others. Lastly, I utilize the [Smart Connections](https://github.com/brianpetro/obsidian-smart-connections) Obsidian plugin to create embeddings from my notes to allow for utilizing LLMs (OpenAI, Ollama, etc.) to query and answer questions from my notes. For example: `Generate a pentesting checklist based on my common approaches to HackTheBox/TryHackMe rooms`. 
+
 # CTF Writeups
 
 For assets related to CTF events, visit https://github.com/landoncrabtree/capture-the-flag
