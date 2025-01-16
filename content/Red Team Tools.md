@@ -72,11 +72,13 @@ Repository | Description
 | [zphisher](https://github.com/htr-tech/zphisher)                                    | Phishing campaign framework to compromise user credentials.                                                                                                      |
 ### Leaked Credentials
 
-| Repository                         | Description                      |
-| ---------------------------------- | -------------------------------- |
-| [Dehashed](https://dehashed.com)   | Leaked credential search engine. |
-| [LeakCheck](https://leakcheck.com) | Leaked credential search engine. |
-| [Snusbase](https://snusbase.com)   | Leaked credential search engine. |
+| Repository                                     | Description                      |
+| ---------------------------------------------- | -------------------------------- |
+| [BreachDirectory](https://breachdirectory.org) | Leaked credential search engine. |
+| [Dehashed](https://dehashed.com)               | Leaked credential search engine. |
+| [Intelx](https://intelx.io)                    | Leaked credential search engine. |
+| [LeakCheck](https://leakcheck.com)             | Leaked credential search engine. |
+| [Snusbase](https://snusbase.com)               | Leaked credential search engine. |
 
 ### Web Exploitation
 
