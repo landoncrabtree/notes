@@ -50,6 +50,11 @@ Writeups for HTB/THM rooms.
 - 2023 [[dogcat|DogCat]]
 - 2023 [[bountyhacker|Bounty Hacker]]
 
+# Blog
+
+* Feb 18, 2025 [[How to Use AI Agents for Faster, Smarter Development]]
+* Dec 30, 2024 [[macOS Persistence]]
+
 # [[Red Team Notes]]
 
 General notes for whatever I don't want to forget.
