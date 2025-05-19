@@ -56,6 +56,7 @@ I tried to do writeups for every challenge/room I solved, but that quickly began
 | 2024 | CTF  | [[huntressctf2024\|HuntressCTF]] ⭐            | 63/3469   |
 | 2024 | CTF  | [[adventofctf2024\|Advent of CTF 2024]] ⭐     | 33/399    |
 | 2025 | CTF  | BSides Nashville 😔                           | 1st Place |
+| 2025 | CTF  | [[hactf2025 \| HAC CTF 2025]] ⭐               | 3/31      |
 
 # [[Red Team Notes]]
 
