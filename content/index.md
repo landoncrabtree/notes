@@ -29,34 +29,35 @@ I tried to do writeups for every challenge/room I solved, but that quickly began
 😔 => Public writeups not allowed (most likely re-used challenges)
 ```
 
-| Date | Type | Name                                          | Ranking   |
-| ---- | ---- | --------------------------------------------- | --------- |
-| 2021 | CTF  | MetaCTF ❗                                     | -         |
-| 2021 | CTF  | [[nsacbc2021\|NSA Codebreaker Challenge]] ⭐   | -         |
-| 2022 | CTF  | HTB Dirty Money ❗                             | -         |
-| 2022 | CTF  | MagpieCTF ⭐                                   | -         |
-| 2022 | HTB  | [[lazyadmin \| LazyAdmin]] ⭐                  | N/A       |
-| 2022 | HTB  | [[paper \| Paper]] ⭐                          | N/A       |
-| 2022 | HTB  | [[archetype \| Archetype]] ⭐                  | N/A       |
-| 2023 | CTF  | SIII U.S. Cyber Open 😔                       | 35/734    |
-| 2023 | CTF  | [[googlectf2023\|Google CTF]] ⭐               | -         |
-| 2023 | CTF  | UIUCTF ❗                                      | -         |
-| 2023 | CTF  | PatriotCTF ❗                                  | 9/967     |
-| 2023 | CTF  | [[csaw2023\|CSAW Qualifiers]] ⭐               | 167/1098  |
-| 2023 | CTF  | InfoSec Conference (Nashville, TN) 😔         | 1st Place |
-| 2023 | HTB  | [[bountyhacker \| Bounty Hacker]] ⭐           | N/A       |
-| 2023 | HTB  | [[dogcat \| DogCat]] ⭐                        | N/A       |
-| 2023 | CTF  | National Cyber League (Fall) 😔               | 23/7500   |
-| 2024 | CTF  | National Cyber League (Spring) 😔             | 44/7412   |
-| 2024 | CTF  | [[uiuctf2024\|UIUCTF]] ⭐                      | 75/959    |
-| 2024 | CTF  | [[ductf2024\|DownUnderCTF]] ⭐                 | -         |
-| 2024 | CTF  | [[csaw2024\|CSAW Qualifiers]] ⭐               | -         |
-| 2024 | CTF  | InfoSec Conference (Nashville, TN) 😔         | 1st Place |
-| 2024 | CTF  | [[nsacbc2024 \| NSA Codebreaker Challenge]] ⭐ | -         |
-| 2024 | CTF  | [[huntressctf2024\|HuntressCTF]] ⭐            | 63/3469   |
-| 2024 | CTF  | [[adventofctf2024\|Advent of CTF 2024]] ⭐     | 33/399    |
-| 2025 | CTF  | BSides Nashville 😔                           | 1st Place |
-| 2025 | CTF  | [[hactf2025 \| HAC CTF 2025]] ⭐               | 3/31      |
+| Date | Type | Name                                                     | Ranking                        |
+| ---- | ---- | -------------------------------------------------------- | ------------------------------ |
+| 2021 | CTF  | MetaCTF ❗                                                | -                              |
+| 2021 | CTF  | [[nsacbc2021\|NSA Codebreaker Challenge]] ⭐              | -                              |
+| 2022 | CTF  | HTB Dirty Money ❗                                        | -                              |
+| 2022 | CTF  | MagpieCTF ⭐                                              | -                              |
+| 2022 | HTB  | [[lazyadmin \| LazyAdmin]] ⭐                             | N/A                            |
+| 2022 | HTB  | [[paper \| Paper]] ⭐                                     | N/A                            |
+| 2022 | HTB  | [[archetype \| Archetype]] ⭐                             | N/A                            |
+| 2023 | CTF  | SIII U.S. Cyber Open 😔                                  | 35/734                         |
+| 2023 | CTF  | [[googlectf2023\|Google CTF]] ⭐                          | -                              |
+| 2023 | CTF  | UIUCTF ❗                                                 | -                              |
+| 2023 | CTF  | PatriotCTF ❗                                             | 9/967                          |
+| 2023 | CTF  | [[csaw2023\|CSAW Qualifiers]] ⭐                          | 167/1098                       |
+| 2023 | CTF  | InfoSec Conference (Nashville, TN) 😔                    | 1st Place                      |
+| 2023 | HTB  | [[bountyhacker \| Bounty Hacker]] ⭐                      | N/A                            |
+| 2023 | HTB  | [[dogcat \| DogCat]] ⭐                                   | N/A                            |
+| 2023 | CTF  | National Cyber League (Fall) 😔                          | 23/7500                        |
+| 2024 | CTF  | National Cyber League (Spring) 😔                        | 44/7412                        |
+| 2024 | CTF  | [[uiuctf2024\|UIUCTF]] ⭐                                 | 75/959                         |
+| 2024 | CTF  | [[ductf2024\|DownUnderCTF]] ⭐                            | -                              |
+| 2024 | CTF  | [[csaw2024\|CSAW Qualifiers]] ⭐                          | -                              |
+| 2024 | CTF  | InfoSec Conference (Nashville, TN) 😔                    | 1st Place                      |
+| 2024 | CTF  | [[nsacbc2024 \| NSA Codebreaker Challenge]] ⭐            | -                              |
+| 2024 | CTF  | [[huntressctf2024\|HuntressCTF]] ⭐                       | 63/3469                        |
+| 2024 | CTF  | [[adventofctf2024\|Advent of CTF 2024]] ⭐                | 33/399                         |
+| 2025 | CTF  | BSides Nashville 😔                                      | 1st Place                      |
+| 2025 | CTF  | [[hactf2025 \| HAC CTF 2025]] ⭐                          | 3/31                           |
+| 2025 | CTF  | [[thmindustrialintrusion \| THM Industrial Intrusion]] ⭐ | N/A (Team size exceeded limit) |
 
 # [[Red Team Notes]]
 
