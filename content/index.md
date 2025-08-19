@@ -58,6 +58,8 @@ I tried to do writeups for every challenge/room I solved, but that quickly began
 | 2025 | CTF  | BSides Nashville 😔                                      | 1st Place                      |
 | 2025 | CTF  | [[hactf2025 \| HAC CTF 2025]] ⭐                          | 3/31                           |
 | 2025 | CTF  | [[thmindustrialintrusion \| THM Industrial Intrusion]] ⭐ | N/A (Team size exceeded limit) |
+| 2025 | CTF  | L3AKCTF 2025                                             | 111/1587                       |
+| 2025 | CTF  | UIUCTF 2025                                              | 77/642                         |
 
 # [[Red Team Notes]]
 
