@@ -50,23 +50,21 @@ tags:
 
 
 ### Web Exploitation
-Repository | Description
----- | ----
-[Arachni](https://github.com/Arachni/arachni) |  Web Application Security Scanner Framework
-[burpsuite](https://portswigger.net/burp/communitydownload) | Full web testing suite, including proxied requests
-[Caido](https://caido.io/) | Like Burp but written in Rust
-[dirb](https://github.com/v0re/dirb) | Web application directory/file fuzzer to find other pages or files worth looking at.
-[dotGit](https://github.com/davtur19/DotGit) | A Firefox and Chrome extension that shows you if there is an exposed `.git` directory 
-[feroxbuster](https://github.com/epi052/feroxbuster) | Web application directory/file fuzzer to find other pages or files worth looking at. Written in Rust.
-[flask-unsign](https://github.com/Paradoxis/Flask-Unsign) | Command line tool to fetch, decode, brute-force and craft session cookies of a Flask application
-[gobuster](https://github.com/OJ/gobuster) | Web application directory/file fuzzer to find other pages or files worth looking at. Also supports DNS busting (such as subdomains). Written in Go.
-[Nikto](https://github.com/sullo/nikto) | Web server scanner to perform security checks on a web server.
-[nosqlmap](https://github.com/codingo/NoSQLMap) | Like sqlmap, but for NoSQL.
-[PayloadsAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master) | Useful payloads for a variety of attacks such as SQLi, IDOR, XSS, etc.
-[sqlmap](https://github.com/sqlmapproject/sqlmap) | Performs automated SQL injection tests on GET and POST requests.
-[w3af](https://w3af.org/) | Web application attack and audit framework.
-[wappalyzer](https://www.wappalyzer.com/) | Identify what frameworks a website runs
-[wpscan](https://github.com/wpscanteam/wpscan) | Automatic WordPress scanner to identify information about a WordPress site and possible vulnerabilities.
+| Repository                                                                              | Description                                                                                                                                         |
+| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [burpsuite](https://portswigger.net/burp/communitydownload)                             | Full web testing suite, including proxied requests                                                                                                  |
+| [Caido](https://caido.io/)                                                              | Like Burp but written in Rust                                                                                                                       |
+| [dotGit](https://github.com/davtur19/DotGit)                                            | A Firefox and Chrome extension that shows you if there is an exposed `.git` directory                                                               |
+| [feroxbuster](https://github.com/epi052/feroxbuster)                                    | Web application directory/file fuzzer to find other pages or files worth looking at. Written in Rust.                                               |
+| [flask-unsign](https://github.com/Paradoxis/Flask-Unsign)                               | Command line tool to fetch, decode, brute-force and craft session cookies of a Flask application                                                    |
+| [gobuster](https://github.com/OJ/gobuster)                                              | Web application directory/file fuzzer to find other pages or files worth looking at. Also supports DNS busting (such as subdomains). Written in Go. |
+| [Nikto](https://github.com/sullo/nikto)                                                 | Web server scanner to perform security checks on a web server.                                                                                      |
+| [nosqlmap](https://github.com/codingo/NoSQLMap)                                         | Like sqlmap, but for NoSQL.                                                                                                                         |
+| [PayloadsAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master) | Useful payloads for a variety of attacks such as SQLi, IDOR, XSS, etc.                                                                              |
+| [sqlmap](https://github.com/sqlmapproject/sqlmap)                                       | Performs automated SQL injection tests on GET and POST requests.                                                                                    |
+| [w3af](https://w3af.org/)                                                               | Web application attack and audit framework.                                                                                                         |
+| [wappalyzer](https://www.wappalyzer.com/)                                               | Identify what frameworks a website runs                                                                                                             |
+| [wpscan](https://github.com/wpscanteam/wpscan)                                          | Automatic WordPress scanner to identify information about a WordPress site and possible vulnerabilities.                                            |
 
 
 

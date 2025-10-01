@@ -60,6 +60,10 @@ I tried to do writeups for every challenge/room I solved, but that quickly began
 | 2025 | CTF  | [[thmindustrialintrusion \| THM Industrial Intrusion]] ⭐ | N/A (Team size exceeded limit) |
 | 2025 | CTF  | L3AKCTF 2025                                             | 111/1587                       |
 | 2025 | CTF  | UIUCTF 2025                                              | 77/642                         |
+| 2025 | CTF  | Amazon AppSec Qualifiers 😔                              | 24/100                         |
+| 2025 | CTF  | Amazon AppSec Finals 😔                                  | 9/27                           |
+| 2025 | CTF  | InfoSec Nashville 2025 😔                                | 1st Place                      |
+| 2025 | CTF  | Sunshine CTF 2025 ❗                                      | 197/1376                       |
 
 # [[Red Team Notes]]
 
