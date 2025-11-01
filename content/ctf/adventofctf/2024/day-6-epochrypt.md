@@ -1,5 +1,5 @@
 ---
-title: AdventOfCTF 2024 Day 6: Epochrypt
+title: "AdventOfCTF 2024 Day 6: Epochrypt"
 draft: false
 tags:
   - ctf

@@ -1,5 +1,5 @@
 ---
-title: AdventOfCTF 2024 Day 2: Screaming
+title: "AdventOfCTF 2024 Day 2: Screaming"
 draft: false
 tags:
   - ctf

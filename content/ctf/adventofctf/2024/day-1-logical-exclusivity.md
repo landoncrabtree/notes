@@ -1,5 +1,5 @@
 ---
-title: AdventOfCTF 2024 Day 1: Logical Exclusivity
+title: "AdventOfCTF 2024 Day 1: Logical Exclusivity"
 draft: false
 tags:
   - ctf

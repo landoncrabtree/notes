@@ -1,5 +1,5 @@
 ---
-title: AdventOfCTF 2024 Day 13: Disoriented Santa
+title: AdventOfCTF 2024 Day 13:D Disoriented Santa
 draft: false
 tags:
   - ctf

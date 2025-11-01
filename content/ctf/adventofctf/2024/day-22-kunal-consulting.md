@@ -1,5 +1,5 @@
 ---
-title: AdventOfCTF 2024 Day 22: K.U.N.A.L. Consulting
+title: "AdventOfCTF 2024 Day 22: K.U.N.A.L. Consulting"
 draft: false
 tags:
   - ctf

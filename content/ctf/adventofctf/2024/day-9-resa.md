@@ -1,5 +1,5 @@
 ---
-title: AdventOfCTF 2024 Day 9: resa?
+title: "AdventOfCTF 2024 Day 9: resa?"
 draft: false
 tags:
   - ctf

@@ -1,5 +1,5 @@
 ---
-title: AdventOfCTF 2024 Day 12: Letter to Santa
+title: "AdventOfCTF 2024 Day 12: Letter to Santa"
 draft: false
 tags:
   - ctf

@@ -1,5 +1,5 @@
 ---
-title: AdventOfCTF 2024 Day 7: Apple Fanatic
+title: AdventOfCTF 2024 Day 7:A pple Fanatic
 draft: false
 tags:
   - ctf

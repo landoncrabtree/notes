@@ -1,5 +1,5 @@
 ---
-title: AdventOfCTF 2024 Day 3: ElfTV
+title: "AdventOfCTF 2024 Day 3: ElfTV"
 draft: false
 tags:
   - ctf

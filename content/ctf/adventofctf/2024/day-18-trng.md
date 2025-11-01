@@ -1,5 +1,5 @@
 ---
-title: AdventOfCTF 2024 Day 18: trng
+title: "AdventOfCTF 2024 Day 18: trng"
 draft: false
 tags:
   - ctf

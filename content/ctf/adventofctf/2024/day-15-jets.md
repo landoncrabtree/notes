@@ -1,5 +1,5 @@
 ---
-title: AdventOfCTF 2024 Day 15: JETS
+title: "AdventOfCTF 2024 Day 15: JETS"
 draft: false
 tags:
   - ctf
