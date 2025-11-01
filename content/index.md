@@ -64,7 +64,7 @@ I tried to do writeups for every challenge/room I solved, but that quickly began
 | 2025 | CTF  | Amazon AppSec Finals 😔                                  | 9/27                           |
 | 2025 | CTF  | InfoSec Nashville 2025 😔                                | 1st Place                      |
 | 2025 | CTF  | Sunshine CTF 2025 ❗                                      | 197/1376                       |
-| 2025 | CTF  | HuntressCTF 2025                                         | 46/6869                        |
+| 2025 | CTF  | [[huntressctf2025}HuntressCTF 2025]]                     | 46/6869                        |
 
 # [[Red Team Notes]]
 
