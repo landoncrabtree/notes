@@ -53,8 +53,12 @@ html {
 // Subtle vignette effect (dark mode only) — applied to body, not html,
 // because Safari uses html's background-color for the browser chrome area
 // and cannot extract a color from a gradient.
+// IMPORTANT: Use background-image (not the background shorthand) so that
+// background-color from base.scss (var(--light)) is preserved as a solid
+// fallback. The shorthand resets background-color to transparent, which
+// causes Safari to inconsistently detect the page color for its chrome.
 :root[saved-theme="dark"] body {
-  background: radial-gradient(ellipse at center, var(--light) 0%, #060810 100%);
+  background-image: radial-gradient(ellipse at center, var(--light) 0%, #060810 100%);
   background-attachment: fixed;
 }
 
