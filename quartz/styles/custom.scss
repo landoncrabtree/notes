@@ -1,3 +1,827 @@
 @use "./base.scss";
+@use "./variables.scss" as *;
 
-// put your custom CSS here!
+// ============================================================
+// HACKER TERMINAL THEME — Custom Overrides
+// ============================================================
+
+// ---- Keyframe Animations ----
+
+@keyframes blink-cursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { text-shadow: 0 0 4px rgba(0, 229, 57, 0.3); }
+  50% { text-shadow: 0 0 8px rgba(0, 229, 57, 0.5), 0 0 16px rgba(0, 229, 57, 0.2); }
+}
+
+@keyframes terminal-boot {
+  0% { opacity: 0; transform: translateY(4px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+// ---- CRT Scanline Overlay (very subtle, static texture) ----
+// Only shown in dark mode for the terminal feel
+
+:root[saved-theme="dark"] body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 99999;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 3px,
+    rgba(0, 0, 0, 0.02) 3px,
+    rgba(0, 0, 0, 0.02) 4px
+  );
+}
+
+// ---- Base Overrides ----
+
+// Subtle vignette effect (dark mode only)
+:root[saved-theme="dark"] {
+  background: radial-gradient(ellipse at center, var(--light) 0%, #060810 100%);
+  background-attachment: fixed;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: 0.01em;
+}
+
+::selection {
+  background: rgba(0, 229, 57, 0.3);
+  color: #fff;
+}
+
+// ---- Custom Scrollbar ----
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gray);
+  border-radius: 3px;
+
+  &:hover {
+    background: var(--secondary);
+    box-shadow: 0 0 6px rgba(0, 229, 57, 0.4);
+  }
+}
+
+// Firefox scrollbar
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--gray) var(--light);
+}
+
+// ---- Page Title — Terminal Prompt Style ----
+
+.page-title {
+  font-size: 1.75rem;
+  position: relative;
+
+  a {
+    color: var(--secondary) !important;
+    background: none !important;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+
+    &::before {
+      content: "> ";
+      color: var(--tertiary);
+      opacity: 0.7;
+      font-weight: 400;
+    }
+
+    &::after {
+      content: "_";
+      color: var(--secondary);
+      animation: blink-cursor 1s step-end infinite;
+      margin-left: 2px;
+    }
+
+    &:hover {
+      color: var(--tertiary) !important;
+    }
+  }
+}
+
+// Glow effects only in dark mode
+:root[saved-theme="dark"] .page-title a {
+  text-shadow: 0 0 10px rgba(0, 229, 57, 0.4), 0 0 20px rgba(0, 229, 57, 0.15);
+  animation: glow-pulse 3s ease-in-out infinite;
+
+  &:hover {
+    text-shadow: 0 0 14px rgba(0, 255, 204, 0.5), 0 0 28px rgba(0, 255, 204, 0.2);
+  }
+}
+
+// ---- Article Title ----
+
+.article-title {
+  margin: 2rem 0 0 0;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--dark);
+  position: relative;
+  padding-bottom: 0.75rem;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--secondary), transparent);
+  }
+}
+
+// ---- Breadcrumbs — Path Style ----
+
+.breadcrumb-container {
+  font-family: var(--codeFont);
+  font-size: 0.8rem;
+  opacity: 0.65;
+  letter-spacing: 0.02em;
+
+  .breadcrumb-element p {
+    color: var(--gray);
+  }
+
+  a {
+    color: var(--gray) !important;
+    background: none !important;
+    font-weight: 400 !important;
+    padding: 0 !important;
+
+    &:hover {
+      color: var(--secondary) !important;
+    }
+  }
+}
+
+// ---- Content Meta ----
+
+.content-meta {
+  font-family: var(--codeFont);
+  font-size: 0.8rem;
+  color: var(--gray);
+  opacity: 0.7;
+}
+
+// ---- Links ----
+
+a {
+  color: var(--secondary);
+  position: relative;
+  transition: color 0.2s ease, text-shadow 0.2s ease;
+
+  &:hover {
+    color: var(--tertiary);
+  }
+
+  &.internal {
+    background-color: var(--highlight);
+    border-radius: 3px;
+    padding: 0 0.15rem;
+    border-bottom: 1px dashed var(--gray);
+
+    &:hover {
+      background-color: var(--textHighlight);
+      border-bottom-color: var(--tertiary);
+    }
+  }
+
+  &.external .external-icon > path {
+    fill: var(--secondary);
+  }
+}
+
+// ---- Headings ----
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--dark);
+  letter-spacing: -0.01em;
+}
+
+h2 {
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid var(--lightgray);
+}
+
+// ---- Code Blocks — Terminal Window Style ----
+
+pre {
+  background: var(--lightgray) !important;
+  border: 1px solid var(--lightgray);
+  border-radius: 6px;
+  position: relative;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+  // macOS traffic light dots
+  &::before {
+    content: "";
+    display: block;
+    height: 28px;
+    background:
+      radial-gradient(circle at 16px 50%, #ff5f57 5px, transparent 5.5px),
+      radial-gradient(circle at 34px 50%, #febc2e 5px, transparent 5.5px),
+      radial-gradient(circle at 52px 50%, #28c840 5px, transparent 5.5px);
+    background-repeat: no-repeat;
+    border-bottom: 1px solid var(--lightgray);
+    user-select: none;
+  }
+
+  > code {
+    font-size: 0.82rem;
+    line-height: 1.7;
+
+    & > [data-line]::before {
+      color: var(--gray);
+      opacity: 0.5;
+    }
+  }
+}
+
+// Inline code
+code {
+  background: var(--lightgray);
+  border: 1px solid var(--lightgray);
+  color: var(--tertiary);
+  font-size: 0.85em;
+  border-radius: 3px;
+  padding: 0.1rem 0.35rem;
+}
+
+figure[data-rehype-pretty-code-figure] > [data-rehype-pretty-code-title] {
+  font-family: var(--codeFont);
+  font-size: 0.75rem;
+  color: var(--gray);
+  background: var(--lightgray);
+  border: 1px solid var(--lightgray);
+  border-bottom: none;
+  border-radius: 6px 6px 0 0;
+  padding: 0.3rem 0.7rem;
+  margin-bottom: -1px;
+}
+
+// ---- Blockquotes — Terminal Output Style ----
+
+blockquote {
+  background: var(--lightgray);
+  border-left: 3px solid var(--secondary);
+  border-radius: 0 4px 4px 0;
+  padding: 0.6rem 1rem;
+  margin: 1rem 0;
+  position: relative;
+
+  p {
+    margin: 0.3rem 0;
+  }
+}
+
+// ---- Tables ----
+
+th {
+  background: var(--lightgray);
+  border-bottom: 2px solid var(--secondary);
+  color: var(--secondary);
+  font-family: var(--codeFont);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+td {
+  border-bottom: 1px solid var(--lightgray);
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+tr:hover {
+  background: var(--highlight);
+}
+
+// ---- Horizontal Rules ----
+
+hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gray), transparent);
+  opacity: 0.3;
+}
+
+// ---- Explorer — File Tree Style ----
+
+.explorer {
+  button h2 {
+    font-family: var(--codeFont);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--gray);
+  }
+}
+
+.explorer-content {
+  font-size: 0.88rem;
+
+  ul li > a {
+    font-family: var(--codeFont);
+    font-size: 0.82rem;
+    letter-spacing: 0.01em;
+    transition: color 0.15s ease, padding-left 0.15s ease;
+
+    &:hover {
+      padding-left: 4px;
+    }
+  }
+
+  .folder-outer > ul {
+    border-left: 1px solid var(--lightgray);
+  }
+}
+
+.folder-container {
+  div > a, div > button span {
+    font-family: var(--codeFont) !important;
+    font-size: 0.82rem;
+    text-transform: none;
+  }
+}
+
+.folder-icon {
+  color: var(--gray);
+  opacity: 0.7;
+}
+
+// ---- Graph — Styled Container ----
+
+.graph > .graph-outer {
+  border: 1px solid var(--lightgray);
+  border-radius: 6px;
+  background: var(--light);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.graph > h3 {
+  font-family: var(--codeFont);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gray);
+}
+
+// ---- TOC — Table of Contents ----
+
+button.toc-header h3 {
+  font-family: var(--codeFont);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gray);
+}
+
+ul.toc-content.overflow > li > a {
+  font-family: var(--codeFont);
+  font-size: 0.8rem;
+  letter-spacing: 0.01em;
+
+  &.in-view {
+    color: var(--secondary);
+    opacity: 0.9;
+  }
+}
+
+// ---- Backlinks ----
+
+.backlinks > h3 {
+  font-family: var(--codeFont);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gray);
+}
+
+.backlinks ul > li > a {
+  font-family: var(--codeFont);
+  font-size: 0.82rem;
+}
+
+// ---- Search ----
+
+.search > .search-button {
+  border: 1px solid var(--lightgray);
+  border-radius: 4px;
+  background: var(--light);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    border-color: var(--secondary);
+  }
+
+  p {
+    font-family: var(--codeFont);
+    font-size: 0.8rem;
+  }
+}
+
+.search-container .search-space {
+  > input {
+    font-family: var(--codeFont);
+    background: var(--light);
+    border: 1px solid var(--secondary) !important;
+    color: var(--dark);
+    caret-color: var(--secondary);
+
+    &::placeholder {
+      color: var(--gray);
+    }
+  }
+}
+
+// ---- Tags ----
+
+a.internal.tag-link {
+  font-family: var(--codeFont);
+  font-size: 0.82rem;
+  background: var(--highlight) !important;
+  border: 1px solid var(--gray);
+  border-radius: 3px;
+  padding: 0.1rem 0.4rem !important;
+  color: var(--secondary);
+
+  &:hover {
+    background: var(--textHighlight) !important;
+    border-color: var(--secondary);
+  }
+}
+
+// ---- Footer ----
+
+footer {
+  border-top: 1px solid var(--lightgray);
+  padding-top: 1rem;
+  font-family: var(--codeFont);
+  font-size: 0.8rem;
+
+  p, a {
+    font-size: 0.8rem;
+  }
+}
+
+// ---- Popover ----
+
+.popover > .popover-inner {
+  background: var(--light);
+  border: 1px solid var(--lightgray);
+  border-radius: 6px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+}
+
+// ---- Darkmode Toggle ----
+
+.darkmode svg {
+  fill: var(--gray);
+  transition: fill 0.2s ease;
+
+  &:hover {
+    fill: var(--secondary);
+  }
+}
+
+// ---- Navigation Progress Bar (SPA transition) ----
+
+.navigation-progress {
+  background: var(--secondary) !important;
+}
+
+// ---- Reading Progress Bar ----
+
+#reading-progress-bar {
+  box-shadow: none;
+}
+
+// ---- Callouts ----
+
+.callout {
+  border-radius: 4px;
+  border: 1px solid var(--lightgray);
+  background: var(--lightgray);
+
+  .callout-title {
+    font-family: var(--codeFont);
+    font-size: 0.85rem;
+    letter-spacing: 0.02em;
+  }
+}
+
+// ---- Footnotes ----
+
+.footnotes {
+  border-top: 1px solid var(--lightgray);
+  font-size: 0.85rem;
+}
+
+// ---- List Pages ----
+
+li.section-li > .section {
+  .meta {
+    font-family: var(--codeFont);
+    font-size: 0.8rem;
+    color: var(--gray);
+  }
+}
+
+// ---- Sidebar Styling ----
+
+.page > #quartz-body .sidebar {
+  &.left, &.right {
+    @media all and ($desktop) {
+      border-right: none;
+    }
+  }
+}
+
+// ---- Images ----
+
+img {
+  border-radius: 4px;
+  border: 1px solid var(--lightgray);
+}
+
+// ---- Checkboxes ----
+
+input[type="checkbox"] {
+  border: 1px solid var(--gray);
+  background-color: var(--light);
+
+  &:checked {
+    border-color: var(--secondary);
+    background-color: var(--secondary);
+  }
+}
+
+// ---- Smooth Page Load Animation ----
+
+.center > article {
+  animation: terminal-boot 0.3s ease-out;
+}
+
+// ---- Text Highlight ----
+
+.text-highlight {
+  background-color: rgba(0, 255, 204, 0.12);
+  border-radius: 2px;
+  padding: 0 0.15rem;
+}
+
+// ---- Global Graph ----
+
+.graph > .global-graph-outer > .global-graph-container {
+  background-color: var(--light);
+  border: 1px solid var(--lightgray);
+  border-radius: 6px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+}
+
+// ---- Clipboard Button (code copy) ----
+
+.clipboard-button {
+  background: var(--lightgray);
+  border: 1px solid var(--lightgray);
+  color: var(--gray);
+  border-radius: 3px;
+  transition: color 0.2s ease, border-color 0.2s ease;
+
+  &:hover {
+    color: var(--secondary);
+    border-color: var(--secondary);
+  }
+}
+
+// ---- Reader Mode ----
+
+.readermode svg {
+  fill: var(--gray);
+  transition: fill 0.2s ease;
+
+  &:hover {
+    fill: var(--secondary);
+  }
+}
+
+// Override default reader mode behavior (which just sets opacity: 0)
+// Instead: fade out left sidebar content, hide right sidebar, expand content
+:root[reader-mode="on"] {
+  // Cancel the default opacity hide from readermode.scss
+  & .sidebar.left,
+  & .sidebar.right {
+    opacity: 1 !important;
+  }
+}
+
+// Enable smooth grid column transitions
+.page > #quartz-body {
+  transition: grid-template-columns 0.3s ease;
+}
+
+// Left sidebar elements need transitions for smooth fade
+.sidebar.left {
+  .page-title,
+  .explorer {
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+}
+
+// Desktop + tablet reader mode
+@media all and ($desktop) {
+  :root[reader-mode="on"] .page > #quartz-body {
+    // Narrow left column, collapse right, expand center
+    grid-template-columns: 52px 1fr 0px;
+
+    .sidebar.left {
+      padding-left: 0.75rem;
+      padding-right: 0.5rem;
+
+      // Hide page title and explorer to free space for centering
+      .page-title {
+        display: none;
+      }
+
+      .explorer {
+        display: none;
+      }
+
+      // Stack icons vertically, centered in the sidebar
+      .flex-component {
+        flex-direction: column !important;
+        gap: 0.6rem !important;
+        align-items: center;
+        justify-content: center;
+        flex-grow: 1;
+      }
+
+      // Kill flex-grow on the search wrapper
+      .flex-component > div:has(.search) {
+        flex-grow: 0 !important;
+      }
+
+      // Collapse search to icon-only
+      .search {
+        min-width: 0;
+        max-width: none;
+
+        .search-button {
+          width: 28px;
+          min-width: 28px;
+          padding: 0;
+          justify-content: center;
+          border: none;
+          background: transparent;
+
+          p { display: none; }
+          svg { margin: 0; }
+        }
+      }
+    }
+
+    // Collapse right sidebar
+    .sidebar.right {
+      overflow: hidden;
+      visibility: hidden;
+      padding: 0 !important;
+      min-width: 0;
+      gap: 0;
+
+      > * {
+        opacity: 0;
+        transition: opacity 0.2s ease;
+      }
+    }
+  }
+}
+
+@media all and ($tablet) {
+  :root[reader-mode="on"] .page > #quartz-body {
+    grid-template-columns: 52px 1fr;
+
+    .sidebar.left {
+      padding-left: 0.75rem;
+      padding-right: 0.5rem;
+
+      .page-title {
+        display: none;
+      }
+
+      .explorer {
+        display: none;
+      }
+
+      .flex-component {
+        flex-direction: column !important;
+        gap: 0.6rem !important;
+        align-items: center;
+        justify-content: center;
+        flex-grow: 1;
+      }
+
+      .flex-component > div:has(.search) {
+        flex-grow: 0 !important;
+      }
+
+      .search {
+        min-width: 0;
+        max-width: none;
+
+        .search-button {
+          width: 28px;
+          min-width: 28px;
+          padding: 0;
+          justify-content: center;
+          border: none;
+          background: transparent;
+
+          p { display: none; }
+          svg { margin: 0; }
+        }
+      }
+    }
+  }
+}
+
+// ============================================================
+// DARK MODE ENHANCEMENTS
+// Extra glow/shadow effects that only make sense on dark bg
+// ============================================================
+
+:root[saved-theme="dark"] {
+  pre {
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.03);
+  }
+
+  .graph > .graph-outer {
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+  }
+
+  .graph > .global-graph-outer > .global-graph-container {
+    box-shadow: 0 8px 48px rgba(0, 0, 0, 0.6);
+  }
+
+  .popover > .popover-inner {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  }
+
+  .navigation-progress {
+    box-shadow: 0 0 8px rgba(0, 229, 57, 0.5);
+  }
+
+  #reading-progress-bar {
+    box-shadow: 0 0 6px rgba(0, 229, 57, 0.4), 0 0 12px rgba(0, 229, 57, 0.15);
+  }
+
+  .search > .search-button:hover {
+    box-shadow: 0 0 8px rgba(0, 229, 57, 0.15);
+  }
+
+  a:hover {
+    text-shadow: 0 0 8px rgba(0, 255, 204, 0.3);
+  }
+
+  .darkmode svg:hover {
+    filter: drop-shadow(0 0 4px rgba(0, 229, 57, 0.4));
+  }
+
+  .readermode svg:hover {
+    filter: drop-shadow(0 0 4px rgba(0, 229, 57, 0.4));
+  }
+
+  input[type="checkbox"]:checked {
+    box-shadow: 0 0 4px rgba(0, 229, 57, 0.3);
+  }
+
+  .article-title::after {
+    box-shadow: 0 0 8px rgba(0, 229, 57, 0.3);
+  }
+
+  ul.toc-content.overflow > li > a.in-view {
+    text-shadow: 0 0 6px rgba(0, 229, 57, 0.2);
+  }
+}

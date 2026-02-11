@@ -14,7 +14,15 @@ I utilize [Obsidian](https://obsidian.md) as my primary method of note-taking. T
 
 # Blog
 
-For blog posts, check out my GitBook: <https://blog.landon.pw> 
+| Date | Name                                                |
+| ---- | --------------------------------------------------- |
+| 2022 | [[Landon's Declassified Internship Survival Guide]] |
+| 2022 | [[New AsyncRAT Variation Malware Analysis]]         |
+| 2023 | [[My Microsoft Summer 2023 Internship Experience]]  |
+| 2024 | [[A Review of offSec's OSCP+]]                      |
+| 2024 | [[Is College Worth it for Cybersecurity?]]          |
+| 2025 | [[Hacking the TP-LINK Tapo C100 Camera]]            |
+
 
 # Writeups
 
@@ -31,16 +39,12 @@ I tried to do writeups for every challenge/room I solved, but that quickly began
 
 | Date | Type | Name                                                     | Ranking                        |
 | ---- | ---- | -------------------------------------------------------- | ------------------------------ |
-| 2021 | CTF  | MetaCTF ❗                                                | -                              |
 | 2021 | CTF  | [[nsacbc2021\|NSA Codebreaker Challenge]] ⭐              | -                              |
-| 2022 | CTF  | HTB Dirty Money ❗                                        | -                              |
-| 2022 | CTF  | MagpieCTF ⭐                                              | -                              |
 | 2022 | HTB  | [[lazyadmin \| LazyAdmin]] ⭐                             | N/A                            |
 | 2022 | HTB  | [[paper \| Paper]] ⭐                                     | N/A                            |
 | 2022 | HTB  | [[archetype \| Archetype]] ⭐                             | N/A                            |
 | 2023 | CTF  | SIII U.S. Cyber Open 😔                                  | 35/734                         |
 | 2023 | CTF  | [[googlectf2023\|Google CTF]] ⭐                          | -                              |
-| 2023 | CTF  | UIUCTF ❗                                                 | -                              |
 | 2023 | CTF  | PatriotCTF ❗                                             | 9/967                          |
 | 2023 | CTF  | [[csaw2023\|CSAW Qualifiers]] ⭐                          | 167/1098                       |
 | 2023 | CTF  | InfoSec Conference (Nashville, TN) 😔                    | 1st Place                      |
@@ -58,13 +62,11 @@ I tried to do writeups for every challenge/room I solved, but that quickly began
 | 2025 | CTF  | BSides Nashville 😔                                      | 1st Place                      |
 | 2025 | CTF  | [[hactf2025 \| HAC CTF 2025]] ⭐                          | 3/31                           |
 | 2025 | CTF  | [[thmindustrialintrusion \| THM Industrial Intrusion]] ⭐ | N/A (Team size exceeded limit) |
-| 2025 | CTF  | L3AKCTF 2025                                             | 111/1587                       |
-| 2025 | CTF  | UIUCTF 2025                                              | 77/642                         |
 | 2025 | CTF  | Amazon AppSec Qualifiers 😔                              | 24/100                         |
 | 2025 | CTF  | Amazon AppSec Finals 😔                                  | 9/27                           |
 | 2025 | CTF  | InfoSec Nashville 2025 😔                                | 1st Place                      |
-| 2025 | CTF  | Sunshine CTF 2025 ❗                                      | 197/1376                       |
-| 2025 | CTF  | [[huntressctf2025}HuntressCTF 2025]]                     | 46/6869                        |
+| 2025 | CTF  | National Cyber League (Fall 2025) 😔                     | 2/7500                         |
+| 2025 | CTF  | [[huntressctf2025\|HuntressCTF]] ⭐                       | 46/6869                        |
 
 # [[Red Team Notes]]
 
