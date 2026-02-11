@@ -831,6 +831,12 @@ input[type="checkbox"] {
 // ============================================================
 
 @media all and ($mobile) {
+  // Solid background on mobile header so content doesn't peek through
+  .page > #quartz-body .sidebar.left {
+    background-color: var(--light);
+    z-index: 10;
+  }
+
   // Shrink page title to fit alongside controls
   .page-title {
     font-size: 1.2rem;
