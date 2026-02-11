@@ -48,6 +48,8 @@
 // Prevent white flash — set background on html immediately
 html {
   background-color: var(--light);
+  // Fix iOS horizontal scroll from 100vw (which includes scrollbar width)
+  overflow-x: clip;
 }
 
 // Subtle vignette effect (dark mode only)
@@ -836,24 +838,24 @@ input[type="checkbox"] {
 // ============================================================
 
 @media all and ($mobile) {
-  // Solid background on mobile header — extends into Safari's safe area
+  // Scroll padding accounts for sticky header + safe area
+  html {
+    scroll-padding-top: calc(env(safe-area-inset-top, 0px) + 4rem);
+  }
+
+  // Solid background on mobile sticky header — handles Safari's dynamic URL bar
   .page > #quartz-body .sidebar.left {
     background-color: var(--light);
     z-index: 10;
-    position: sticky;
+    position: sticky !important;
     top: 0;
-
-    // Extend background above the header to cover Safari's URL bar area
-    &::before {
-      content: "";
-      position: absolute;
-      top: -100px;
-      left: -1rem;
-      right: -1rem;
-      height: 100px;
-      background-color: var(--light);
-      z-index: -1;
-    }
+    // Account for safe area (notch/dynamic island) with viewport-fit=cover
+    padding-top: calc(env(safe-area-inset-top, 0px) + 1rem) !important;
+    padding-bottom: 0.5rem;
+    padding-left: env(safe-area-inset-left, 1rem);
+    padding-right: env(safe-area-inset-right, 1rem);
+    // Prevent content from showing above during Safari URL bar transitions
+    box-shadow: 0 calc(-1 * env(safe-area-inset-top, 50px) - 50px) 0 50px var(--light);
   }
 
   // Shrink page title to fit alongside controls

@@ -51,7 +51,7 @@ export default (() => {
           </>
         )}
         <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossOrigin="anonymous" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 
         <meta name="og:site_name" content={cfg.pageTitle}></meta>
         <meta property="og:title" content={title} />
@@ -98,6 +98,12 @@ export default (() => {
           media="(prefers-color-scheme: dark)"
         />
 
+        {/* Inline critical style to prevent white flash before CSS loads */}
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `html{background-color:${cfg.theme.colors.darkMode.light}}:root[saved-theme="light"]{background-color:${cfg.theme.colors.lightMode.light}}`,
+          }}
+        />
         {css.map((resource) => CSSResourceToStyleElement(resource, true))}
         {js
           .filter((resource) => resource.loadTime === "beforeDOMReady")
