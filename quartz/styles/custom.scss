@@ -838,7 +838,11 @@ input[type="checkbox"] {
 // ============================================================
 
 @media all and ($mobile) {
-  // Cosmetic-only mobile overrides — positioning is handled by explorer.scss
+  // Extend the sticky header's background into Safari's safe area (behind URL bar)
+  // viewport-fit=cover lets us paint into that region; safe-area-inset-top accounts for it
+  .page > #quartz-body .sidebar.left:has(.explorer) {
+    padding-top: max(1rem, env(safe-area-inset-top, 1rem));
+  }
 
   // Shrink page title to fit alongside controls
   .page-title {

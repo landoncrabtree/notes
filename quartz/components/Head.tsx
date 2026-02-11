@@ -51,7 +51,7 @@ export default (() => {
           </>
         )}
         <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossOrigin="anonymous" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 
         <meta name="og:site_name" content={cfg.pageTitle}></meta>
         <meta property="og:title" content={title} />
@@ -86,16 +86,12 @@ export default (() => {
         <meta name="description" content={description} />
         <meta name="generator" content="Quartz" />
 
-        {/* Theme color for Safari/mobile browser chrome */}
-        <meta
-          name="theme-color"
-          content={cfg.theme.colors.lightMode.light}
-          media="(prefers-color-scheme: light)"
-        />
-        <meta
-          name="theme-color"
-          content={cfg.theme.colors.darkMode.light}
-          media="(prefers-color-scheme: dark)"
+        {/* Dynamic theme-color for Safari mobile chrome — set inline before first paint */}
+        <meta id="theme-color-meta" name="theme-color" content={cfg.theme.colors.darkMode.light} />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){var l="${cfg.theme.colors.lightMode.light}",d="${cfg.theme.colors.darkMode.light}";var p=window.matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";var t=localStorage.getItem("theme")||p;var m=document.getElementById("theme-color-meta");if(m)m.content=t==="light"?l:d;document.documentElement.setAttribute("saved-theme",t)})()`,
+          }}
         />
 
         {/* Inline critical style to prevent white flash before CSS loads */}
@@ -108,6 +104,12 @@ export default (() => {
         {js
           .filter((resource) => resource.loadTime === "beforeDOMReady")
           .map((res) => JSResourceToScriptElement(res, true))}
+        {/* Keep theme-color in sync when user toggles theme */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){var l="${cfg.theme.colors.lightMode.light}",d="${cfg.theme.colors.darkMode.light}";var m=document.getElementById("theme-color-meta");if(m){new MutationObserver(function(){var t=document.documentElement.getAttribute("saved-theme");m.content=t==="light"?l:d}).observe(document.documentElement,{attributes:true,attributeFilter:["saved-theme"]})}})()`,
+          }}
+        />
         {additionalHead.map((resource) => {
           if (typeof resource === "function") {
             return resource(fileData)
