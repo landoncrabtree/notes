@@ -50,8 +50,10 @@ html {
   background-color: var(--light);
 }
 
-// Subtle vignette effect (dark mode only)
-:root[saved-theme="dark"] {
+// Subtle vignette effect (dark mode only) — applied to body, not html,
+// because Safari uses html's background-color for the browser chrome area
+// and cannot extract a color from a gradient.
+:root[saved-theme="dark"] body {
   background: radial-gradient(ellipse at center, var(--light) 0%, #060810 100%);
   background-attachment: fixed;
 }
