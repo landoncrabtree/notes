@@ -58,7 +58,7 @@ html {
 // fallback. The shorthand resets background-color to transparent, which
 // causes Safari to inconsistently detect the page color for its chrome.
 :root[saved-theme="dark"] body {
-  background-image: radial-gradient(ellipse at center, var(--light) 0%, #060810 100%);
+  background-color: var(--light);
   background-attachment: fixed;
 }
 
