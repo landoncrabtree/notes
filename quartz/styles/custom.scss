@@ -56,17 +56,17 @@
 // that no element's background-image is a gradient. Safari's chrome color
 // detection breaks when it encounters background-image gradients on body
 // or any page-level container.
-:root[saved-theme="dark"] body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 99998;
-  background: radial-gradient(ellipse at center, transparent 0%, rgba(0, 0, 0, 0.35) 100%);
-}
+// :root[saved-theme="dark"] body::before {
+//   content: "";
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   pointer-events: none;
+//   z-index: 99998;
+//   background: radial-gradient(ellipse at center, transparent 0%, rgba(0, 0, 0, 0.35) 100%);
+// }
 
 body {
   -webkit-font-smoothing: antialiased;
