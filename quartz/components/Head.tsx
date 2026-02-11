@@ -51,7 +51,7 @@ export default (() => {
           </>
         )}
         <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossOrigin="anonymous" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
         <meta name="og:site_name" content={cfg.pageTitle}></meta>
         <meta property="og:title" content={title} />
@@ -86,28 +86,17 @@ export default (() => {
         <meta name="description" content={description} />
         <meta name="generator" content="Quartz" />
 
-        {/* Dynamic theme-color for Safari mobile chrome — set inline before first paint */}
+        {/* Theme-color for Safari mobile chrome — dynamically synced with Quartz theme */}
         <meta id="theme-color-meta" name="theme-color" content={cfg.theme.colors.darkMode.light} />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(){var l="${cfg.theme.colors.lightMode.light}",d="${cfg.theme.colors.darkMode.light}";var p=window.matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";var t=localStorage.getItem("theme")||p;var m=document.getElementById("theme-color-meta");if(m)m.content=t==="light"?l:d;document.documentElement.setAttribute("saved-theme",t)})()`,
-          }}
-        />
 
-        {/* Inline critical style to prevent white flash before CSS loads */}
-        <style
-          dangerouslySetInnerHTML={{
-            __html: `html{background-color:${cfg.theme.colors.darkMode.light}}:root[saved-theme="light"]{background-color:${cfg.theme.colors.lightMode.light}}`,
-          }}
-        />
         {css.map((resource) => CSSResourceToStyleElement(resource, true))}
         {js
           .filter((resource) => resource.loadTime === "beforeDOMReady")
           .map((res) => JSResourceToScriptElement(res, true))}
-        {/* Keep theme-color in sync when user toggles theme */}
+        {/* After darkmode.inline.ts has set saved-theme, sync theme-color and watch for toggles */}
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(){var l="${cfg.theme.colors.lightMode.light}",d="${cfg.theme.colors.darkMode.light}";var m=document.getElementById("theme-color-meta");if(m){new MutationObserver(function(){var t=document.documentElement.getAttribute("saved-theme");m.content=t==="light"?l:d}).observe(document.documentElement,{attributes:true,attributeFilter:["saved-theme"]})}})()`,
+            __html: `(function(){var l="${cfg.theme.colors.lightMode.light}",d="${cfg.theme.colors.darkMode.light}";var m=document.getElementById("theme-color-meta");if(!m)return;function u(){var t=document.documentElement.getAttribute("saved-theme");m.content=t==="light"?l:d}u();new MutationObserver(u).observe(document.documentElement,{attributes:true,attributeFilter:["saved-theme"]})})()`,
           }}
         />
         {additionalHead.map((resource) => {

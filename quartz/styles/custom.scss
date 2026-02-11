@@ -25,42 +25,36 @@
 // ---- CRT Scanline Overlay (very subtle, static texture) ----
 // Only shown in dark mode for the terminal feel
 
-:root[saved-theme="dark"] body::after {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 99999;
-  background: repeating-linear-gradient(
-    0deg,
-    transparent,
-    transparent 3px,
-    rgba(0, 0, 0, 0.02) 3px,
-    rgba(0, 0, 0, 0.02) 4px
-  );
-}
+// :root[saved-theme="dark"] body::after {
+//   content: "";
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   pointer-events: none;
+//   z-index: 99999;
+//   background: repeating-linear-gradient(
+//     0deg,
+//     transparent,
+//     transparent 3px,
+//     rgba(0, 0, 0, 0.02) 3px,
+//     rgba(0, 0, 0, 0.02) 4px
+//   );
+// }
 
 // ---- Base Overrides ----
 
-// Prevent white flash — set background on html immediately
-html {
-  background-color: var(--light);
-}
-
-// Subtle vignette effect (dark mode only) — applied to body, not html,
-// because Safari uses html's background-color for the browser chrome area
-// and cannot extract a color from a gradient.
-// IMPORTANT: Use background-image (not the background shorthand) so that
-// background-color from base.scss (var(--light)) is preserved as a solid
-// fallback. The shorthand resets background-color to transparent, which
-// causes Safari to inconsistently detect the page color for its chrome.
-:root[saved-theme="dark"] body {
-  background-color: var(--light);
-  background-attachment: fixed;
-}
+// Subtle vignette effect (dark mode only).
+// Use background-image (not the background shorthand) so that body's
+// background-color from base.scss is preserved. Safari uses the body's
+// background-color (propagated to the canvas) to determine chrome color.
+// NOTE: Do NOT add background-color to html — that breaks the CSS
+// body-to-canvas propagation that Safari relies on for chrome detection.
+// :root[saved-theme="dark"] body {
+//   background-image: radial-gradient(ellipse at center, var(--light) 0%, #060810 100%);
+//   background-attachment: fixed;
+// }
 
 body {
   -webkit-font-smoothing: antialiased;
@@ -843,11 +837,6 @@ input[type="checkbox"] {
 
 @media all and ($mobile) {
   // Extend the sticky header's background into Safari's safe area (behind URL bar)
-  // viewport-fit=cover lets us paint into that region; safe-area-inset-top accounts for it
-  .page > #quartz-body .sidebar.left:has(.explorer) {
-    padding-top: max(1rem, env(safe-area-inset-top, 1rem));
-  }
-
   // Shrink page title to fit alongside controls
   .page-title {
     font-size: 1.2rem;
