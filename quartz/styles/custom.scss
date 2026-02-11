@@ -825,3 +825,46 @@ input[type="checkbox"] {
     text-shadow: 0 0 6px rgba(0, 229, 57, 0.2);
   }
 }
+
+// ============================================================
+// MOBILE LAYOUT FIXES
+// ============================================================
+
+@media all and ($mobile) {
+  // Shrink page title to fit alongside controls
+  .page-title {
+    font-size: 1.2rem;
+
+    // Hide the prompt prefix and blinking cursor on mobile to save space
+    a::before {
+      content: none;
+    }
+
+    a::after {
+      content: none;
+    }
+  }
+
+  // Compact the search button to icon-only on mobile
+  .sidebar.left .search {
+    flex-grow: 0 !important;
+    min-width: 0;
+
+    .search-button {
+      width: 32px;
+      min-width: 32px;
+      padding: 0;
+      justify-content: center;
+      border: none;
+      background: transparent;
+
+      p { display: none; }
+      svg { margin: 0; }
+    }
+  }
+
+  // Tighten the flex toolbar gap
+  .sidebar.left .flex-component {
+    gap: 0.5rem !important;
+  }
+}
