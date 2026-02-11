@@ -45,6 +45,11 @@
 
 // ---- Base Overrides ----
 
+// Prevent white flash — set background on html immediately
+html {
+  background-color: var(--light);
+}
+
 // Subtle vignette effect (dark mode only)
 :root[saved-theme="dark"] {
   background: radial-gradient(ellipse at center, var(--light) 0%, #060810 100%);
@@ -831,10 +836,24 @@ input[type="checkbox"] {
 // ============================================================
 
 @media all and ($mobile) {
-  // Solid background on mobile header so content doesn't peek through
+  // Solid background on mobile header — extends into Safari's safe area
   .page > #quartz-body .sidebar.left {
     background-color: var(--light);
     z-index: 10;
+    position: sticky;
+    top: 0;
+
+    // Extend background above the header to cover Safari's URL bar area
+    &::before {
+      content: "";
+      position: absolute;
+      top: -100px;
+      left: -1rem;
+      right: -1rem;
+      height: 100px;
+      background-color: var(--light);
+      z-index: -1;
+    }
   }
 
   // Shrink page title to fit alongside controls

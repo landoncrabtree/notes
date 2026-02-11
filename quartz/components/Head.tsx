@@ -86,6 +86,18 @@ export default (() => {
         <meta name="description" content={description} />
         <meta name="generator" content="Quartz" />
 
+        {/* Theme color for Safari/mobile browser chrome */}
+        <meta
+          name="theme-color"
+          content={cfg.theme.colors.lightMode.light}
+          media="(prefers-color-scheme: light)"
+        />
+        <meta
+          name="theme-color"
+          content={cfg.theme.colors.darkMode.light}
+          media="(prefers-color-scheme: dark)"
+        />
+
         {css.map((resource) => CSSResourceToStyleElement(resource, true))}
         {js
           .filter((resource) => resource.loadTime === "beforeDOMReady")
