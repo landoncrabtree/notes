@@ -25,36 +25,34 @@
 // ---- CRT Scanline Overlay (very subtle, static texture) ----
 // Only shown in dark mode for the terminal feel
 
-// :root[saved-theme="dark"] body::after {
-//   content: "";
-//   position: fixed;
-//   top: 0;
-//   left: 0;
-//   width: 100%;
-//   height: 100%;
-//   pointer-events: none;
-//   z-index: 99999;
-//   background: repeating-linear-gradient(
-//     0deg,
-//     transparent,
-//     transparent 3px,
-//     rgba(0, 0, 0, 0.02) 3px,
-//     rgba(0, 0, 0, 0.02) 4px
-//   );
-// }
+:root[saved-theme="dark"] body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 99999;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 3px,
+    rgba(0, 0, 0, 0.02) 3px,
+    rgba(0, 0, 0, 0.02) 4px
+  );
+}
 
 // ---- Base Overrides ----
 
 // Subtle vignette effect (dark mode only).
-// Use background-image (not the background shorthand) so that body's
-// background-color from base.scss is preserved. Safari uses the body's
-// background-color (propagated to the canvas) to determine chrome color.
-// NOTE: Do NOT add background-color to html — that breaks the CSS
-// body-to-canvas propagation that Safari relies on for chrome detection.
-// :root[saved-theme="dark"] body {
-//   background-image: radial-gradient(ellipse at center, var(--light) 0%, #060810 100%);
-//   background-attachment: fixed;
-// }
+// Applied to #quartz-root instead of body so that body's solid background-color
+// propagates cleanly to the canvas. Safari uses the canvas color for its chrome
+// area, and it cannot extract a color from a gradient.
+:root[saved-theme="dark"] #quartz-root {
+  background-image: radial-gradient(ellipse at center, var(--light) 0%, #060810 100%);
+  background-attachment: fixed;
+}
 
 body {
   -webkit-font-smoothing: antialiased;
