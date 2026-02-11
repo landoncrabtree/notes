@@ -51,6 +51,8 @@
 
 // ---- Base Overrides ----
 
+html { background-color: var(--light); }
+
 // Subtle vignette effect (dark mode only).
 // Implemented as a fixed pseudo-element overlay (like the CRT scanlines) so
 // that no element's background-image is a gradient. Safari's chrome color
