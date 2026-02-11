@@ -32,15 +32,15 @@ const config: QuartzConfig = {
       },
       colors: {
         lightMode: {
-          light: "#eef0f2",
-          lightgray: "#d8dce2",
-          gray: "#8892a2",
-          darkgray: "#3d4551",
-          dark: "#1a1e26",
-          secondary: "#008a24",
-          tertiary: "#007a6e",
-          highlight: "rgba(0, 138, 36, 0.08)",
-          textHighlight: "rgba(0, 122, 110, 0.12)",
+          light: "#fdf6e3",           // Solarized base3 — warm cream
+          lightgray: "#eee8d5",       // Solarized base2 — borders, subtle bg
+          gray: "#93a1a1",            // Solarized base1 — muted elements
+          darkgray: "#586e75",        // Solarized base01 — body text
+          dark: "#073642",            // Solarized base03 — headings
+          secondary: "#859900",       // Solarized green
+          tertiary: "#2aa198",        // Solarized cyan
+          highlight: "rgba(133, 153, 0, 0.08)",
+          textHighlight: "rgba(42, 161, 152, 0.12)",
         },
         darkMode: {
           light: "#0b0e14",
@@ -64,7 +64,7 @@ const config: QuartzConfig = {
       }),
       Plugin.SyntaxHighlighting({
         theme: {
-          light: "vitesse-light",
+          light: "solarized-light",
           dark: "vitesse-dark",
         },
         keepBackground: false,
