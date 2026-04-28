@@ -1,45 +1,48 @@
 # yaml-language-server: $schema=./quartz/plugins/quartz-plugins.schema.json
 configuration:
-  pageTitle: Quartz 5
-  pageTitleSuffix: ""
+  pageTitle: Landon Crabtree
+  pageTitleSuffix: " | Landon Crabtree"
   enableSPA: true
   enablePopovers: true
   analytics:
-    provider: plausible
+    provider: umami
+    host: https://cloud.umami.is
+    websiteId: 6210b34a-ab86-4492-8319-20ceb2a1190f
   locale: en-US
-  baseUrl: v5.quartz-1h4.pages.dev
+  baseUrl: notes.landon.pw
   ignorePatterns:
-    - private
-    - templates
-    - .obsidian
+    - "**/private"
+    - "**/templates"
+    - "**/.obsidian"
   theme:
     fontOrigin: googleFonts
     cdnCaching: true
     typography:
-      header: Schibsted Grotesk
-      body: Source Sans Pro
-      code: IBM Plex Mono
+      title: JetBrains Mono
+      header: JetBrains Mono
+      body: Space Grotesk
+      code: JetBrains Mono
     colors:
       lightMode:
-        light: "#faf8f8"
-        lightgray: "#e5e5e5"
-        gray: "#b8b8b8"
-        darkgray: "#4e4e4e"
-        dark: "#2b2b2b"
-        secondary: "#284b63"
-        tertiary: "#84a59d"
-        highlight: rgba(143, 159, 169, 0.15)
-        textHighlight: "#fff23688"
+        light: "#fdf6e3"
+        lightgray: "#eee8d5"
+        gray: "#93a1a1"
+        darkgray: "#586e75"
+        dark: "#073642"
+        secondary: "#859900"
+        tertiary: "#2aa198"
+        highlight: "rgba(133, 153, 0, 0.08)"
+        textHighlight: "rgba(42, 161, 152, 0.12)"
       darkMode:
-        light: "#161618"
-        lightgray: "#393639"
-        gray: "#646464"
-        darkgray: "#d4d4d4"
-        dark: "#ebebec"
-        secondary: "#7b97aa"
-        tertiary: "#84a59d"
-        highlight: rgba(143, 159, 169, 0.15)
-        textHighlight: "#b3aa0288"
+        light: "#0b0e14"
+        lightgray: "#131820"
+        gray: "#3b4558"
+        darkgray: "#8a95a8"
+        dark: "#c5ced9"
+        secondary: "#00e539"
+        tertiary: "#00ffcc"
+        highlight: "rgba(0, 229, 57, 0.07)"
+        textHighlight: "rgba(0, 255, 204, 0.15)"
 plugins:
   - source: github:quartz-community/created-modified-date
     enabled: true
@@ -54,8 +57,8 @@ plugins:
     enabled: true
     options:
       theme:
-        light: github-light
-        dark: github-dark
+        light: solarized-light
+        dark: vitesse-dark
       keepBackground: false
     order: 20
   - source: github:quartz-community/obsidian-flavored-markdown
@@ -154,7 +157,7 @@ plugins:
       position: beforeBody
       priority: 20
   - source: github:quartz-community/tag-list
-    enabled: false
+    enabled: true
     layout:
       position: beforeBody
       priority: 30
@@ -193,8 +196,8 @@ plugins:
     enabled: true
     options:
       links:
-        GitHub: https://github.com/jackyzha0/quartz
-        Discord Community: https://discord.gg/cRFFHYye7t
+        GitHub: https://github.com/landoncrabtree
+        "Powered by Quartz": https://quartz.jzhao.xyz/
   - source: github:quartz-community/recent-notes
     enabled: false
   - source: github:quartz-community/spacer

@@ -6,8 +6,11 @@ prof
 tsconfig.tsbuildinfo
 .obsidian
 .quartz-cache
-private/
 .replit
 replit.nix
-.quartz/
-quartz/cli/tui/dist/
+content/private/
+
+# Ignore Smart Environment folder
+.smart-env
+.smart-chats
+.system-prompts
