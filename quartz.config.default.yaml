@@ -1,7 +1,7 @@
 # yaml-language-server: $schema=./quartz/plugins/quartz-plugins.schema.json
 configuration:
-  pageTitle: Landon Crabtree
-  pageTitleSuffix: " | Landon Crabtree"
+  pageTitle: Landon Crabtree's Second Brain
+  pageTitleSuffix: " | Landon Crabtree's Second Brain"
   enableSPA: true
   enablePopovers: true
   analytics:

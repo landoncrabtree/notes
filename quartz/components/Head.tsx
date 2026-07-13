@@ -13,8 +13,10 @@ export default (() => {
     ctx,
   }: QuartzComponentProps) => {
     const titleSuffix = cfg.pageTitleSuffix ?? ""
-    const title =
-      (fileData.frontmatter?.title ?? i18n(cfg.locale).propertyDefaults.title) + titleSuffix
+    // Bare page title (no brand suffix) for social cards; the suffixed variant
+    // is only used in <title> since og:site_name already supplies the brand.
+    const baseTitle = fileData.frontmatter?.title ?? i18n(cfg.locale).propertyDefaults.title
+    const title = baseTitle + titleSuffix
     const description =
       fileData.frontmatter?.socialDescription ??
       fileData.frontmatter?.description ??
@@ -54,10 +56,10 @@ export default (() => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
         <meta name="og:site_name" content={cfg.pageTitle}></meta>
-        <meta property="og:title" content={title} />
+        <meta property="og:title" content={baseTitle} />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={title} />
+        <meta name="twitter:title" content={baseTitle} />
         <meta name="twitter:description" content={description} />
         <meta property="og:description" content={description} />
         <meta property="og:image:alt" content={description} />
@@ -83,8 +85,42 @@ export default (() => {
         )}
 
         <link rel="icon" href={iconPath} />
+        {cfg.baseUrl && <link rel="canonical" href={socialUrl} />}
         <meta name="description" content={description} />
+        <meta name="author" content="Landon Crabtree" />
+        <meta property="og:locale" content={(cfg.locale ?? "en-US").replace("-", "_")} />
+        <meta name="twitter:site" content="@r31igi0n" />
+        <meta name="twitter:creator" content="@r31igi0n" />
+        <meta
+          name="theme-color"
+          media="(prefers-color-scheme: light)"
+          content={cfg.theme.colors.lightMode.light}
+        />
+        <meta
+          name="theme-color"
+          media="(prefers-color-scheme: dark)"
+          content={cfg.theme.colors.darkMode.light}
+        />
         <meta name="generator" content="Quartz" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: "Landon Crabtree",
+              url: "https://landon.pw/",
+              image: "https://landon.pw/assets/img/logo.png",
+              jobTitle: "Security Engineer",
+              worksFor: { "@type": "Organization", name: "Microsoft" },
+              sameAs: [
+                "https://twitter.com/r31igi0n",
+                "https://linkedin.com/in/landoncrabtree",
+                "https://github.com/landoncrabtree",
+              ],
+            }),
+          }}
+        />
 
         {css.map((resource) => CSSResourceToStyleElement(resource, true))}
         {js
