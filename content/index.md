@@ -67,6 +67,7 @@ I tried to do writeups for every challenge/room I solved, but that quickly began
 | 2025 | CTF  | InfoSec Nashville 2025 😔                                | 1st Place                      |
 | 2025 | CTF  | National Cyber League (Fall 2025) 😔                     | 2/7500                         |
 | 2025 | CTF  | [[huntressctf2025\|HuntressCTF]] ⭐                       | 46/6869                        |
+| 2026 | CTF  | [[5n4cky\|DEFCON 5n4ck3y CTF]] ⭐                         | 8/716                          |
 
 # [[Red Team Notes]]
 
